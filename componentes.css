@@ -1,0 +1,350 @@
+/* =====================================================
+   COMPONENTES COMPARTIDOS
+   ===================================================== */
+
+/* ---------- Encabezado de página interior ---------- */
+.pagina-header {
+  background-color: var(--carbon);
+  color: var(--blanco);
+  padding: calc(var(--espacio-xl) + 4rem) 0 var(--espacio-l);
+}
+
+.pagina-header__eyebrow {
+  font-family: var(--font-data);
+  color: var(--oxido);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.8rem;
+  margin-bottom: var(--espacio-s);
+}
+
+.pagina-header__titulo {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  max-width: 20ch;
+}
+
+/* ---------- Tarjeta de propiedad ---------- */
+.tarjeta-propiedad {
+  background-color: var(--blanco);
+  border: 1px solid var(--borde-suave);
+  overflow: hidden;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.tarjeta-propiedad:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(41, 41, 41, 0.15);
+}
+
+.tarjeta-propiedad__imagen {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.tarjeta-propiedad__etiqueta {
+  position: absolute;
+  top: var(--espacio-s);
+  left: var(--espacio-s);
+  background-color: var(--oxido);
+  color: var(--blanco);
+  font-family: var(--font-data);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.35rem 0.7rem;
+}
+
+.tarjeta-propiedad__cuerpo {
+  padding: var(--espacio-m);
+}
+
+.tarjeta-propiedad__zona {
+  font-family: var(--font-data);
+  font-size: 0.8rem;
+  color: var(--pizarra);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+}
+
+.tarjeta-propiedad__titulo {
+  font-size: 1.3rem;
+  margin-bottom: 0.6rem;
+}
+
+.tarjeta-propiedad__precio {
+  font-family: var(--font-data);
+  font-size: 1.15rem;
+  color: var(--oxido);
+  margin-bottom: var(--espacio-s);
+}
+
+.tarjeta-propiedad__specs {
+  display: flex;
+  gap: var(--espacio-m);
+  font-family: var(--font-data);
+  font-size: 0.85rem;
+  color: var(--pizarra);
+  padding-top: var(--espacio-s);
+  border-top: 1px solid var(--borde-suave);
+}
+
+/* ---------- Estado vacío (sin propiedades cargadas todavía) ---------- */
+.estado-vacio {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--espacio-xl) var(--espacio-m);
+  border: 1.5px dashed var(--borde-suave);
+  background-color: var(--hueso);
+}
+
+.estado-vacio__icono {
+  font-family: var(--font-data);
+  font-size: 0.75rem;
+  color: var(--oxido);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--espacio-s);
+}
+
+.estado-vacio__titulo {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  margin-bottom: var(--espacio-s);
+}
+
+.estado-vacio__texto {
+  color: var(--pizarra);
+  max-width: 42ch;
+  margin: 0 auto var(--espacio-m);
+}
+
+/* ---------- Grilla de catálogo + filtros ---------- */
+.catalogo {
+  padding: var(--espacio-xl) 0;
+}
+
+.catalogo__layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: var(--espacio-l);
+}
+
+.filtros {
+  align-self: start;
+  position: sticky;
+  top: 100px;
+  border: 1px solid var(--borde-suave);
+  padding: var(--espacio-m);
+}
+
+.filtros__titulo {
+  font-family: var(--font-data);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: var(--oxido);
+  margin-bottom: var(--espacio-m);
+}
+
+.filtros__grupo {
+  margin-bottom: var(--espacio-m);
+}
+
+.filtros__grupo label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.filtros__grupo select,
+.filtros__grupo input {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid var(--borde-suave);
+  font-family: var(--font-body);
+  background-color: var(--blanco);
+}
+
+.catalogo__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--espacio-m);
+}
+
+.catalogo__resultado-vacio {
+  display: none;
+  text-align: center;
+  padding: var(--espacio-xl) 0;
+  color: var(--pizarra);
+  font-family: var(--font-data);
+}
+
+@media (max-width: 900px) {
+  .catalogo__layout {
+    grid-template-columns: 1fr;
+  }
+  .filtros {
+    position: static;
+  }
+  .catalogo__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Formulario de contacto ---------- */
+.contacto-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espacio-xl);
+  padding: var(--espacio-xl) 0;
+}
+
+.formulario .campo {
+  margin-bottom: var(--espacio-m);
+}
+
+.formulario label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--borde-suave);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: border-color 0.25s ease-out;
+}
+
+.formulario input:focus,
+.formulario select:focus,
+.formulario textarea:focus {
+  border-color: var(--oxido);
+  outline: none;
+}
+
+.formulario .error {
+  color: var(--oxido);
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  min-height: 1.1em;
+}
+
+.formulario__mensaje {
+  margin-top: var(--espacio-m);
+  padding: var(--espacio-m);
+  border-left: 3px solid var(--oxido);
+  background-color: var(--hueso);
+  display: none;
+}
+
+.formulario__mensaje.visible {
+  display: block;
+}
+
+.contacto-info__item {
+  margin-bottom: var(--espacio-l);
+}
+
+.contacto-info__titulo {
+  font-family: var(--font-data);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: var(--oxido);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.4rem;
+}
+
+.contacto-info__mapa {
+  height: 260px;
+  background-color: var(--hueso);
+  border: 1px solid var(--borde-suave);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--pizarra);
+  font-family: var(--font-data);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 900px) {
+  .contacto-layout {
+    grid-template-columns: 1fr;
+    gap: var(--espacio-l);
+  }
+}
+
+/* ---------- Página "Nosotros" ---------- */
+.equipo {
+  padding: var(--espacio-xl) 0;
+}
+
+.equipo__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espacio-m);
+  margin-top: var(--espacio-l);
+}
+
+.equipo__persona-foto {
+  height: 260px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: var(--espacio-s);
+}
+
+.equipo__persona-nombre {
+  font-size: 1.2rem;
+}
+
+.equipo__persona-rol {
+  font-family: var(--font-data);
+  font-size: 0.8rem;
+  color: var(--oxido);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.historia {
+  background-color: var(--hueso);
+  padding: var(--espacio-xl) 0;
+}
+
+.historia__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espacio-xl);
+  align-items: center;
+}
+
+.historia__texto p {
+  margin-bottom: var(--espacio-m);
+  color: var(--pizarra);
+}
+
+.historia__imagen {
+  height: 420px;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 900px) {
+  .equipo__grid {
+    grid-template-columns: 1fr;
+  }
+  .historia__grid {
+    grid-template-columns: 1fr;
+  }
+  .historia__imagen {
+    height: 280px;
+  }
+}

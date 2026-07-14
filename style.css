@@ -1,0 +1,325 @@
+/* =====================================================
+   TERCER AIRE — Sistema de diseño
+   Paleta: carbón / pizarra / óxido / blanco
+   Concepto: altura, luz y aire — vender la vista, no solo el m²
+   ===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  /* Paleta principal (la que definiste) */
+  --carbon: #292929;
+  --pizarra: #4f4f4f;
+  --oxido: #c44613;
+  --blanco: #ffffff;
+
+  /* Tintes derivados, solo para dar aire a las secciones claras */
+  --hueso: #f4f2ef;
+  --borde-suave: #e3e0db;
+
+  /* Tipografía */
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-data: 'Space Mono', monospace;
+
+  /* Espaciado */
+  --espacio-s: 0.75rem;
+  --espacio-m: 1.5rem;
+  --espacio-l: 3rem;
+  --espacio-xl: 6rem;
+}
+
+/* ---------- Reset base ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--carbon);
+  background-color: var(--blanco);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--espacio-m);
+}
+
+/* Respeta a quienes prefieren menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------- Foco visible (accesibilidad) ---------- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--oxido);
+  outline-offset: 3px;
+}
+
+/* =====================================================
+   HEADER / NAV
+   ===================================================== */
+.encabezado {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: rgba(41, 41, 41, 0.85);
+  backdrop-filter: blur(6px);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--espacio-m);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav__marca {
+  display: flex;
+  align-items: center;
+}
+
+.nav__logo {
+  height: 40px;
+  width: auto;
+}
+
+.nav__links {
+  display: flex;
+  gap: var(--espacio-l);
+}
+
+.nav__links a {
+  color: var(--blanco);
+  font-size: 0.95rem;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.nav__links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--oxido);
+  transition: width 0.3s ease-out;
+}
+
+.nav__links a:hover::after,
+.nav__links a.activo::after {
+  width: 100%;
+}
+
+/* Truco CSS-only: un checkbox invisible guarda el estado abierto/cerrado.
+   El <label> actúa de botón (así no depende de JS) y el selector
+   ":checked ~ .nav__links" es el que realmente abre el menú. */
+.nav__check {
+  display: none;
+}
+
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nav__toggle span {
+  width: 26px;
+  height: 2px;
+  background-color: var(--blanco);
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+@media (max-width: 768px) {
+  .nav__toggle {
+    display: flex;
+  }
+
+  .nav__links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: min(70vw, 300px);
+    background-color: var(--carbon);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: var(--espacio-l);
+    gap: var(--espacio-m);
+    transform: translateX(100%);
+    transition: transform 0.35s ease-out;
+  }
+
+  /* Cuando el checkbox está marcado, el menú entra desde la derecha */
+  .nav__check:checked ~ .nav__links {
+    transform: translateX(0);
+  }
+
+  /* Y las 3 barritas se convierten en una X */
+  .nav__check:checked ~ .nav__toggle span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .nav__check:checked ~ .nav__toggle span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav__check:checked ~ .nav__toggle span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+.pie {
+  background-color: var(--carbon);
+  color: var(--blanco);
+  padding: var(--espacio-xl) 0 var(--espacio-m);
+}
+
+.pie__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: var(--espacio-l);
+  padding-bottom: var(--espacio-l);
+  border-bottom: 1px solid var(--pizarra);
+}
+
+.pie__marca {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  margin-bottom: var(--espacio-s);
+}
+
+.pie__marca span {
+  color: var(--oxido);
+}
+
+.pie__lema {
+  color: #cfcfcf;
+  max-width: 32ch;
+}
+
+.pie__titulo-col {
+  font-family: var(--font-data);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--oxido);
+  margin-bottom: var(--espacio-s);
+}
+
+.pie__links li {
+  margin-bottom: 0.5rem;
+}
+
+.pie__links a:hover {
+  color: var(--oxido);
+}
+
+.pie__links a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pie__links svg {
+  flex-shrink: 0;
+}
+
+.pie__abajo {
+  padding-top: var(--espacio-m);
+  font-size: 0.85rem;
+  color: #a0a0a0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .pie__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================================
+   BOTONES
+   ===================================================== */
+.boton {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.9rem 2rem;
+  border-radius: 2px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: transform 0.25s ease-out, background-color 0.25s ease-out, color 0.25s ease-out;
+}
+
+.boton--primario {
+  background-color: var(--oxido);
+  color: var(--blanco);
+}
+
+.boton--primario:hover {
+  transform: translateY(-3px);
+  background-color: #a83a0f;
+}
+
+.boton--fantasma {
+  background-color: transparent;
+  border-color: var(--blanco);
+  color: var(--blanco);
+}
+
+.boton--fantasma:hover {
+  transform: translateY(-3px);
+  background-color: var(--blanco);
+  color: var(--carbon);
+}
