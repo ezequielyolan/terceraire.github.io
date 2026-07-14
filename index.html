@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tercer Aire | Inmobiliaria</title>
+  <meta name="description" content="Tercer Aire — propiedades con altura, luz y vista. Encontrá tu próximo hogar.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/componentes.css">
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+  <header class="encabezado">
+    <nav class="nav">
+      <a href="index.html" class="nav__marca">
+        <img src="img/logo.png" alt="Logo Tercer Aire" class="nav__logo">
+      </a>
+      <input type="checkbox" id="navCheck" class="nav__check">
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html" class="activo">Inicio</a></li>
+        <li><a href="propiedades.html">Propiedades</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+      <label class="nav__toggle" for="navCheck" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </label>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO CON CARRUSEL -->
+    <section class="hero">
+      <div class="carrusel" id="carrusel">
+        <div class="carrusel__slide activo" style="background-image: url('img/paisaje2.jpeg');"></div>
+        <div class="carrusel__slide" style="background-image: url('img/paisaje3.jpeg');"></div>
+        <div class="carrusel__slide" style="background-image: url('img/paisaje4.jpeg');"></div>
+      </div>
+
+      <div class="hero__contenido">
+        <p class="hero__eyebrow">Inmobiliaria · Tercer Aire</p>
+        <h1 class="hero__titulo">Viví donde <em>el aire</em> se respira distinto</h1>
+        <p class="hero__texto">Nuestro verdadero negocio no es vender propiedades, sino ayudar a nuestros clientes a tomar la decisión que mejor se adapte a sus necesidades.</p>
+        <div class="hero__acciones">
+          <a href="propiedades.html" class="boton boton--primario">Ver propiedades</a>
+          <a href="contacto.html" class="boton boton--fantasma">Hablar con un asesor</a>
+        </div>
+      </div>
+
+      <div class="carrusel__controles">
+        <button class="carrusel__flecha" id="flechaPrev" aria-label="Imagen anterior">‹</button>
+        <div class="carrusel__indicadores" id="indicadores"></div>
+        <button class="carrusel__flecha" id="flechaNext" aria-label="Imagen siguiente">›</button>
+      </div>
+    </section>
+
+    <!-- NIVELES (elemento distintivo: sube de piso = sube de beneficio) -->
+    <section class="niveles">
+      <div class="contenedor">
+        <div class="seccion__cabecera">
+          <p class="seccion__eyebrow">Por qué Tercer Aire</p>
+          <h2 class="seccion__titulo">Caminamos con vos, paso a paso</h2>
+        </div>
+        <div class="niveles__lista">
+          <article class="nivel">
+            <p class="nivel__marca">01</p>
+            <h3 class="nivel__titulo">Compra de viviendas</h3>
+            <p class="nivel__texto">¿Buscas casa? Podemos ayudarte a encontrarla.</p>
+          </article>
+          <article class="nivel">
+            <p class="nivel__marca">02</p>
+            <h3 class="nivel__titulo">Venta de casas</h3>
+            <p class="nivel__texto">¿Estás pensando en vender tu casa? Permítenos ayudarte.</p>
+          </article>
+          <article class="nivel">
+            <p class="nivel__marca">03</p>
+            <h3 class="nivel__titulo">Servicio de reubicación</h3>
+            <p class="nivel__texto">¿Conseguiste un nuevo trabajo y te mudas? Podemos ayudarte.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESTACADAS -->
+    <section class="destacadas">
+      <div class="contenedor">
+        <div class="seccion__cabecera">
+          <p class="seccion__eyebrow">Selección actual</p>
+          <h2 class="seccion__titulo">Propiedades destacadas</h2>
+        </div>
+        <div class="destacadas__grid">
+          <div class="estado-vacio" style="grid-column: 1 / -1;">
+            <p class="estado-vacio__icono">Catálogo en preparación</p>
+            <h3 class="estado-vacio__titulo">Todavía no hay propiedades cargadas</h3>
+            <p class="estado-vacio__texto">Estamos armando la primera selección de Tercer Aire. Dejanos tu contacto y te avisamos apenas esté disponible.</p>
+            <a href="contacto.html" class="boton boton--primario">Dejar mis datos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-final">
+      <div class="contenedor">
+        <h2 class="cta-final__titulo">¿Listo para <em>encontrar tu lugar</em>?</h2>
+        <a href="contacto.html" class="boton boton--primario">Coordinar una visita</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie__grid">
+        <div>
+          <p class="pie__marca">Tercer<span>Aire</span></p>
+          <p class="pie__lema">Propiedades con cielo abierto, aire limpio y raíces firmes.</p>
+        </div>
+        <div>
+          <p class="pie__titulo-col">Navegación</p>
+          <ul class="pie__links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="propiedades.html">Propiedades</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+  <p class="pie__titulo-col">Contacto</p>
+  <ul class="pie__links">
+    <li>
+      <a href="mailto:terceraire.inmo@gmail.com">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="m2 7 10 6 10-6"/>
+        </svg>
+        terceraire.inmo@gmail.com
+      </a>
+    </li>
+    <li>
+      <a href="tel:+5492664317453">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        +54 9 266 431 7453
+      </a>
+    </li>
+    <li>
+      <a href="tel:+5492665105831">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        +54 9 266 510 5831
+      </a>
+    </li>
+    <li>
+      <a href="https://www.instagram.com/terceraire.inmo/" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="2" width="20" height="20" rx="5"/>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+        </svg>
+        Seguinos en Instagram
+      </a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/terceraire.inmo/" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+        </svg>
+        Seguinos en Facebook
+      </a>
+    </li>
+  </ul>
+</div>
+      </div>
+      <div class="pie__abajo">
+        <p>© 2026 Tercer Aire. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/carrusel.js"></script>
+
+</body>
+</html>
