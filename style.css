@@ -181,6 +181,7 @@ textarea:focus-visible {
 @media (max-width: 768px) {
   .nav__toggle {
     display: flex;
+    z-index: 102; /* Asegura que el botón hamburguesa / X esté siempre visible arriba */
   }
 
   .nav__links {
@@ -189,7 +190,7 @@ textarea:focus-visible {
     right: 0;
     height: 100vh;
     width: min(70vw, 300px);
-    background-color: rgba(253, 252, 252, 0.808)
+    background-color: var(--carbon);
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -197,21 +198,20 @@ textarea:focus-visible {
     gap: var(--espacio-m);
     transform: translateX(100%);
     transition: transform 0.35s ease-out;
+    z-index: 101; /* Coloca el panel del menú por encima de la página */
   }
 
-  /* --- AGREGA ESTAS LÍNEAS --- */
   .nav__links a {
-    color: var(--marron); /* Cambia el texto a blanco para que contraste */
-    font-size: 1.1rem;   /* Opcional: mejora la legibilidad en pantallas táctiles */
+    color: var(--blanco); /* Texto blanco para que se lea bien sobre el fondo oscuro */
+    font-size: 1.1rem;   /* Tamaño cómodo para pantallas táctiles */
   }
-  /* -------------------------- */
 
-  /* Cuando el checkbox está marcado, el menú entra desde la derecha */
+  /* Cuando el checkbox está marcado, el menú desliza desde la derecha */
   .nav__check:checked ~ .nav__links {
     transform: translateX(0);
   }
 
-  /* Y las 3 barritas se convierten en una X */
+  /* Transforma las 3 barritas del botón en una "X" */
   .nav__check:checked ~ .nav__toggle span:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
   }
