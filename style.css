@@ -189,7 +189,7 @@ textarea:focus-visible {
     right: 0;
     height: 100vh;
     width: min(70vw, 300px);
-    background-color: var(--carbon);
+    background-color: rgba(253, 252, 252, 0.808)
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -201,7 +201,7 @@ textarea:focus-visible {
 
   /* --- AGREGA ESTAS LÍNEAS --- */
   .nav__links a {
-    color: var(--blanco); /* Cambia el texto a blanco para que contraste */
+    color: var(--marron); /* Cambia el texto a blanco para que contraste */
     font-size: 1.1rem;   /* Opcional: mejora la legibilidad en pantallas táctiles */
   }
   /* -------------------------- */
