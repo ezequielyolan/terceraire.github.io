@@ -184,8 +184,10 @@
 }
 
 @media (max-width: 900px) {
-  .catalogo__layout {
+  .contacto-layout {
     grid-template-columns: 1fr;
+    gap: var(--espacio-l);
+    padding: var(--espacio-l) var(--espacio-m); /* Agrega espacio a los costados (izquierda y derecha) */
   }
   .filtros {
     position: static;
