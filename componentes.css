@@ -237,6 +237,7 @@
 .formulario select,
 .formulario textarea {
   width: 100%;
+  max-width: 100%; /* Evita que sobrepasen el ancho de la pantalla */
   padding: 0.8rem;
   border: 1px solid var(--borde-suave);
   font-family: var(--font-body);
