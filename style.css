@@ -174,7 +174,7 @@ textarea:focus-visible {
 .nav__toggle span {
   width: 26px;
   height: 2px;
-  background-color: var(--carbon); /* Cambiado a oscuro para que se vea sobre el fondo blanco del header */
+  background-color: var(--oxido);
   transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 }
 
