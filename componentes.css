@@ -187,7 +187,8 @@
   .contacto-layout {
     grid-template-columns: 1fr;
     gap: var(--espacio-l);
-    padding: var(--espacio-l) var(--espacio-m); /* Agrega espacio a los costados (izquierda y derecha) */
+    padding-left: var(--espacio-m);   /* Margen izquierdo en celulares */
+    padding-right: var(--espacio-m);  /* Margen derecho en celulares */
   }
   .filtros {
     position: static;
