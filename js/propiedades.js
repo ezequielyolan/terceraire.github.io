@@ -63,7 +63,7 @@ El terreno está completamente alambrado, cuenta con tranquera de acceso y la pr
     titulo: "Lotes en Villa Larca (500 m²) precio contado o financiado.",
     tipo: "lote",
     operacion: "venta",
-    zona: "VillaLarca",
+    zona: "Villa Larca",
     moneda: "USD",
     valorNum: 15000,
     precioTexto: "USD 15.000",
@@ -98,5 +98,56 @@ También disponibles con financiación: anticipo y cuotas.⁣
 Un lugar para proyectar tu próxima inversión o hacer realidad tu propio espacio en las sierras.⁣
 ⁣
 Consultanos para conocer más detalles y coordinar una visita.⁣`
+  },
+{
+    id: "CH-001",
+    titulo: "Complejo de 8 Departamentos en Juana Koslay",
+    tipo: "complejo",
+    operacion: "venta",
+    zona: "Juana Koslay",
+    moneda: "USD",
+    valorNum: 250000,
+    precioTexto: "USD 250.000",
+    ambientes: "8 Unidades",
+    superficie: "866,64 m²",
+    superficieCubierta: "866,64 m²",
+    extras: ["patio"],
+    mapaHtml: '<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d868.8344755578202!2d-66.2397650714887!3d-33.25799899833477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzPCsDE1JzI4LjgiUyA2NsKwMTQnMjAuOCJX!5e1!3m2!1sen!2sar!4v1794148244333!5m2!1sen!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>',
+    imagenes: [
+      "props/CH/CH-001/ch00101.jpeg",
+      "props/CH/CH-001/ch00102.jpeg",
+      "props/CH/CH-001/ch00103.jpeg",
+      "props/CH/CH-001/ch00104.jpeg",
+      "props/CH/CH-001/ch00105.jpeg",
+      "props/CH/CH-001/ch00106.jpeg",
+      "props/CH/CH-001/ch00107.jpeg",
+      "props/CH/CH-001/ch00108.jpeg",
+      "props/CH/CH-001/ch00109.jpeg",
+      "props/CH/CH-001/ch00110.jpeg",
+      "props/CH/CH-001/ch00111.jpeg",
+      "props/CH/CH-001/ch00112.jpeg",
+      "props/CH/CH-001/ch00113.jpeg",
+      "props/CH/CH-001/ch00114.jpeg",
+      "props/CH/CH-001/ch00115.jpeg",
+      "props/CH/CH-001/ch00116.jpeg",
+      "props/CH/CH-001/ch00117.jpeg",
+      "props/CH/CH-001/ch00118.jpeg"
+    ],
+    descripcion: `🏡 𝗨𝗻𝗮 𝗽𝗿𝗼𝗽𝗶𝗲𝗱𝗮𝗱 𝗰𝗼𝗻 𝗺𝘂́𝗹𝘁𝗶𝗽𝗹𝗲𝘀 𝗽𝗼𝘀𝗶𝗯𝗶𝗹𝗶𝗱𝗮𝗱𝗲𝘀 𝗲𝗻 𝗝𝘂𝗮𝗻𝗮 𝗞𝗼𝘀𝗹𝗮𝘆 - 𝗦𝗮𝗻 𝗟𝘂𝗶𝘀⁣
+⁣
+Ubicada en una zona estratégica de Juana Koslay, este inmueble reúne una superficie de 866,64 m² y ocho unidades distribuidas dentro del predio; una alternativa interesante para quienes buscan una propiedad con espacios independientes.⁣
+⁣
+Características principales:⁣
+8 departamentos, en su mayoría de 2 ambientes.⁣
+Depósito tipo obrador.⁣
+Predio de 866,64 m².⁣
+A solo 50 metros del acceso asfaltado.⁣
+Papeles al día. Escrituración inmediata.⁣
+⁣
+Su ubicación permite una conexión ágil con San Luis capital, Potrero de los Funes, el dique Cruz de Piedra y otros puntos de interés de la zona.⁣
+⁣
+Una excelente oportunidad para conocer y evaluar de acuerdo con tus planes y objetivos de inversión.⁣ ⁣
+⁣
+📩 ¿Querés más información o coordinar una visita? Escribinos y te contamos los detalles.⁣`
   },
 ];

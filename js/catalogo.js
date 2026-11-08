@@ -109,17 +109,17 @@ function ejecutarBusqueda() {
     const checkboxesSeleccionados = Array.from(document.querySelectorAll('input[name="comodidad"]:checked'))
       .map(cb => cb.value);
 
-    const resultado = listaPropiedades.filter(p => {
+      const resultado = listaPropiedades.filter(p => {
       const matchTipo = tipo === '' || p.tipo === tipo;
       const matchOp = op === '' || p.operacion === op;
-      const matchZona = zona === '' || p.zona.toLowerCase() === zona;
+      const matchZona = zona === '' || p.zona.toLowerCase() === zona.toLowerCase();
       const matchMoneda = moneda === '' || p.moneda === moneda;
       const matchPrecio = p.valorNum >= min && p.valorNum <= max;
-      const matchBanos = p.banos >= banosMin;
-      const matchDorms = p.dormitorios >= dormsMin;
+      const matchBanos = (p.banos || 0) >= banosMin;
+      const matchDorms = (p.dormitorios || 0) >= dormsMin;
 
       // Valida que la propiedad tenga TODAS las comodidades que el usuario tildó
-      const matchExtras = checkboxesSeleccionados.every(extra => 
+        const matchExtras = checkboxesSeleccionados.every(extra => 
         p.extras && p.extras.includes(extra)
       );
 
