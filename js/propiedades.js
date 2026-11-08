@@ -62,6 +62,7 @@ El terreno está completamente alambrado, cuenta con tranquera de acceso y la pr
     id: "LT-001",
     titulo: "Lotes en Villa Larca (500 m²) precio contado o financiado.",
     tipo: "lote",
+    destacada: true,
     operacion: "venta",
     zona: "Villa Larca",
     moneda: "USD",
@@ -103,6 +104,7 @@ Consultanos para conocer más detalles y coordinar una visita.⁣`
     id: "CH-001",
     titulo: "Complejo de 8 Departamentos en Juana Koslay",
     tipo: "complejo",
+    destacada: true,
     operacion: "venta",
     zona: "Juana Koslay",
     moneda: "USD",
@@ -150,4 +152,98 @@ Una excelente oportunidad para conocer y evaluar de acuerdo con tus planes y obj
 ⁣
 📩 ¿Querés más información o coordinar una visita? Escribinos y te contamos los detalles.⁣`
   },
+{
+    id: "CS-002",
+    titulo: "Casa A ESTRENAR en Cortaderas",
+    tipo: "casa",
+    destacada: true,
+    operacion: "venta",
+    zona: "Cortaderas",
+    moneda: "USD",
+    valorNum: 56000,
+    precioTexto: "USD 56.000",
+    ambientes: "3 Ambientes",
+    dormitorios: 2,
+    banos: 1,
+    superficie: "330 m²",
+    superficieCubierta: "65 m²",
+    extras: ["patio"],
+    mapaHtml: '<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d736.8427688294827!2d-64.99645562745324!3d-32.50388524328851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzLCsDMwJzE0LjciUyA2NMKwNTknNDUuOSJX!5e1!3m2!1ses!2sar!4v1794150034727!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>',
+    imagenes: [
+      "props/CS/CS-002/cs00201.jpeg",
+      "props/CS/CS-002/cs00202.jpeg",
+      "props/CS/CS-002/cs00203.jpeg",
+      "props/CS/CS-002/cs00204.jpeg",
+      "props/CS/CS-002/cs00205.jpeg",
+      "props/CS/CS-002/cs00206.jpeg",
+      "props/CS/CS-002/cs00207.jpeg",
+      "props/CS/CS-002/cs00208.jpeg",
+      "props/CS/CS-002/cs00209.jpeg",
+      "props/CS/CS-002/cs00210.jpeg",
+      "props/CS/CS-002/cs00211.jpeg",
+      "props/CS/CS-002/cs00212.jpeg"
+    ],
+    descripcion: `VENTA | CASA A ESTRENAR EN CORTADERAS, SAN LUIS
+⁣
+✨ ¿Qué ofrece esta propiedad?⁣⁣
+• 65 m² cubiertos sobre un terreno de 330 m².⁣⁣
+• 2 habitaciones y baño.⁣⁣
+• Cocina-comedor equipada con bajo mesada, mesada y bacha.⁣⁣
+• Termotanque.⁣⁣
+• Sector exterior para lavadero.⁣⁣
+• Terreno llano y patio arbolado.⁣⁣
+• Servicios de agua y luz. Impuestos al día. Listos para escriturar.⁣⁣
+⁣⁣
+📍 A solo 3 cuadras de la plaza principal de Cortaderas y a 15 minutos de la Villa de Merlo.⁣⁣
+⁣⁣
+💰 Opción con financiación disponible: USD 30.000 de anticipo y 30 cuotas de USD 1.000.⁣⁣
+⁣⁣
+Si estás buscando tu lugar en las sierras o pensás en una propiedad para comenzar una nueva etapa, quizás valga la pena conocerla.`
+  },
+{
+    id: "CS-003",
+    titulo: "Casa en Cortaderas con patio y vista a las sierras",
+    tipo: "casa",
+    operacion: "venta",
+    zona: "Cortaderas",
+    moneda: "USD",
+    valorNum: 60000,
+    precioTexto: "USD 60.000",
+    ambientes: "3 Ambientes",
+    dormitorios: 2,
+    banos: 1,
+    superficie: "409 m²",
+    superficieCubierta: "68,10 m²",
+    extras: ["patio"],
+    mapaHtml: '<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1042.0699893753094!2d-64.99498334278849!3d-32.50242232738384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzLCsDMwJzA4LjkiUyA2NMKwNTknNDEuMiJX!5e1!3m2!1ses!2sar!4v1794150675218!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>',
+    imagenes: [
+      "props/CS/CS-003/cs00301.jpg",
+      "props/CS/CS-003/cs00302.jpg",
+      "props/CS/CS-003/cs00303.jpg",
+      "props/CS/CS-003/cs00304.jpg",
+      "props/CS/CS-003/cs00305.jpg",
+      "props/CS/CS-003/cs00306.jpg"
+    ],
+    descripcion: `VENTA | CASA EN CORTADERAS, SAN LUIS - FINANCIACIÓN EN DÓLARES
+⁣
+🏡 ¿Buscás tu casa propia? Podés tenerla con cuotas fijas en dólares en Cortaderas, San Luis.⁣
+⁣
+Esta vivienda cuenta con espacios funcionales, un patio parquizado con vista a las sierras y una propuesta de financiación ideal para evaluar tu compra.⁣
+⁣
+✓ ¿Qué tiene para ofrecerte?⁣
+• 72 m² totales: 68,10 m² cubiertos y 3,90 m² semicubiertos.⁣
+• Terreno de 409 m², parquizado y delimitado con alambrado romboidal y puerta tranquera.⁣
+• 2 habitaciones.⁣
+• Baño instalado con vanitory.⁣
+• Cocina-comedor con bajo mesada.⁣
+• Termotanque de 65 litros.⁣
+• Lavadero exterior techado.⁣
+• Gabinete para dos tubos grandes de gas y conexión prevista para un futuro servicio.⁣
+⁣
+Además, cuenta con servicios de agua, luz e impuestos al día. Escrituración inmediata.⁣
+⁣
+✓ ¿Cómo podés comprarla?⁣
+💰 Precio contado: USD 60.000 (Se escuchan ofertas de contado).⁣
+Opción de financiación: Anticipo de USD 30.000 + 30 cuotas de USD 1.000.`
+  }
 ];

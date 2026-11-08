@@ -175,15 +175,15 @@
     </div>
   </footer>
 
-  <script src="js/carrusel.js"></script>
+<script src="js/carrusel.js"></script>
   <script src="js/propiedades.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const grilla = document.getElementById('grillaDestacadas');
       if (!grilla || typeof listaPropiedades === 'undefined') return;
 
-      // Toma las primeras 3 propiedades cargadas en propiedades.js
-      const destacadas = listaPropiedades.slice(0, 3);
+      // FILTRA SOLAMENTE LAS QUE TIENEN destacada: true
+      const destacadas = listaPropiedades.filter(p => p.destacada === true);
 
       destacadas.forEach(p => {
         const tarjeta = document.createElement('article');
