@@ -23,7 +23,7 @@ const listaPropiedades = [
     ambientes: "3 Ambientes",
     dormitorios: 2,
     banos: 1,
-    superficie: "60 m²",
+    superficie: "3.627 m²",
     superficieCubierta: "60 m²",
     cochera: "Sí",
     antiguedad: "Excelente estado",
@@ -154,7 +154,7 @@ Una excelente oportunidad para conocer y evaluar de acuerdo con tus planes y obj
   },
 {
     id: "CS-002",
-    titulo: "Casa A ESTRENAR en Cortaderas",
+    titulo: "A ESTRENAR | Casa en Cortaderas - CON FINANCIACIÓN⁣⁣",
     tipo: "casa",
     destacada: true,
     operacion: "venta",
@@ -202,7 +202,7 @@ Si estás buscando tu lugar en las sierras o pensás en una propiedad para comen
   },
 {
     id: "CS-003",
-    titulo: "Casa en Cortaderas con patio y vista a las sierras",
+    titulo: "Casa en Cortaderas con anticipo y cuotas",
     tipo: "casa",
     operacion: "venta",
     zona: "Cortaderas",
@@ -245,5 +245,85 @@ Además, cuenta con servicios de agua, luz e impuestos al día. Escrituración i
 ✓ ¿Cómo podés comprarla?⁣
 💰 Precio contado: USD 60.000 (Se escuchan ofertas de contado).⁣
 Opción de financiación: Anticipo de USD 30.000 + 30 cuotas de USD 1.000.`
-  }
+  },
+{
+    id: "LT-002",
+    titulo: "Lotes en Cortaderas con Anticipo y Cuotas",
+    tipo: "lote",
+    operacion: "venta",
+    zona: "Cortaderas",
+    moneda: "USD",
+    valorNum: 14000,
+    precioTexto: "USD 14.000",
+    ambientes: "Lote / Terreno",
+    superficie: "500 m²",
+    extras: ["patio"],
+    mapaHtml: '<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3474.5472311004523!2d-65.001239!3d-32.499184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzLCsDI5JzU3LjEiUyA2NcKwMDAnMDQuNSJX!5e1!3m2!1ses!2sar!4v1794154835592!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>',
+    imagenes: [
+      "props/LT/LT-002/lt00201.jpg",
+      "props/LT/LT-002/lt00202.jpg",
+      "props/LT/LT-002/lt00203.jpg"
+    ],
+    descripcion: `Estos lotes de 500 m² pueden ser una buena alternativa para empezar a darle forma a tu proyecto, en una ubicación que combina vistas panorámicas a las Sierras de los Comechingones y cercanía al centro del pueblo.⁣
+⁣
+📌Ubicación y características:⁣
+ ✓Lotes de 500 m².⁣
+✓Servicios de agua y luz funcionando.
+✓A 500 metros de la calle asfaltada de ingreso al pueblo.⁣
+✓A 1.000 metros de la plaza principal.⁣
+✓Vista panorámica a las Sierras de los Comechingones.⁣
+✓Listos para escriturar⁣
+⁣
+¿Preferís financiar la compra? Tenemos opciones con anticipo y cuotas. ⁣
+⁣
+📩 Escribinos para conocer más detalles y evaluar cuál de los lotes se adapta mejor a tu proyecto.⁣⁣`
+  },
+{
+    id: "CS-004",
+    titulo: "Casa EN VENTA AMOBLADA en Cortaderas⁣",
+    tipo: "casa",
+    operacion: "venta",
+    zona: "Cortaderas",
+    moneda: "USD",
+    valorNum: 38000,
+    precioTexto: "USD 38.000",
+    ambientes: "2 Ambientes",
+    dormitorios: 1,
+    banos: 1,
+    superficie: "1.090 m²",
+    superficieCubierta: "41 m²",
+    extras: ["patio", "parrilla", "cochera"],
+    mapaHtml: '',
+    imagenes: [
+      "props/CS/CS-004/cs00401.jpg",
+      "props/CS/CS-004/cs00402.jpg",
+      "props/CS/CS-004/cs00403.jpg",
+      "props/CS/CS-004/cs00404.jpg",
+      "props/CS/CS-004/cs00405.jpg",
+      "props/CS/CS-004/cs00406.jpg",
+      "props/CS/CS-004/cs00407.jpg",
+      "props/CS/CS-004/cs00408.jpg",
+      "props/CS/CS-004/cs00409.jpg",
+      "props/CS/CS-004/cs00410.jpg",
+      "props/CS/CS-004/cs00411.jpg" 
+    ],
+    descripcion: `Una propiedad para quienes buscan tranquilidad, espacio y la comodidad de contar con una casa amoblada.⁣
+⁣
+Ubicada a 14 cuadras de la Ruta 1, a la altura del km 17 y cerca del acceso al pueblo. Cuenta con una superficie cubierta de 41 m² sobre un amplio lote esquina de 1.090 m².⁣
+⁣
+La vivienda dispone de:⁣
+⁣
+✓1 dormitorio.⁣
+⁣✓Cocina-comedor.⁣
+⁣✓Baño.⁣
+⁣✓Galería y cochera.⁣
+⁣
+El terreno se encuentra alambrado con cinco hilos y desmalezado. Cuenta con servicios de agua y luz.⁣
+⁣
+Documentación en regla: escritura e impuestos al día.⁣
+⁣
+Una oportunidad para disfrutar de Cortaderas y su entorno natural.⁣
+⁣
+📩 Consultanos para recibir más información o coordinar una visita.⁣`
+  },
 ];
