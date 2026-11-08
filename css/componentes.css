@@ -91,6 +91,13 @@
   border-top: 1px solid var(--borde-suave);
 }
 
+.tarjeta-propiedad__enlace {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
 /* ---------- Estado vacío (sin propiedades cargadas todavía) ---------- */
 .estado-vacio {
   grid-column: 1 / -1;
@@ -552,6 +559,38 @@
   gap: var(--espacio-m);
 }
 
+/* ---------- Estilos para filtros de checkboxes ---------- */
+.grupo-filtro--checkboxes {
+  grid-column: 1 / -1; /* Hace que ocupe todo el ancho de la fila de filtros */
+  border-top: 1px solid var(--borde-suave);
+  padding-top: 1rem;
+  margin-top: 0.5rem;
+}
+
+.checkboxes-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-data);
+  font-size: 0.85rem;
+  color: var(--carbon);
+  cursor: pointer;
+}
+
+.check-item input[type="checkbox"] {
+  accent-color: var(--oxido); /* Pone el tilde del color de tu marca */
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
 /* Adaptabilidad para tablets y celulares */
 @media (max-width: 1024px) {
   .filtros-grid {
@@ -566,4 +605,329 @@
   .catalogo__grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* ---------- Botón desplegable de filtros (Mobile) ---------- */
+.filtros-toggle-mobile {
+  display: none;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background-color: var(--hueso);
+  color: var(--carbon);
+  border: 1px solid var(--borde-suave);
+  padding: 0.9rem 1.2rem;
+  font-family: var(--font-data);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  margin-bottom: var(--espacio-m);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.filtros-toggle-mobile:hover,
+.filtros-toggle-mobile[aria-expanded="true"] {
+  border-color: var(--oxido);
+  color: var(--oxido);
+}
+
+@media (max-width: 768px) {
+  .filtros-toggle-mobile {
+    display: flex;
+  }
+
+  /* Oculta los filtros por defecto en celular */
+  .filtros-avanzados {
+    display: none;
+  }
+
+  /* Se muestra cuando el usuario toca el botón */
+  .filtros-avanzados.abierto {
+    display: block;
+    margin-bottom: var(--espacio-l);
+  }
+}
+
+/* ---------- Página de detalle de propiedad ---------- */
+.detalle-seccion {
+  padding: var(--espacio-l) 0;
+}
+
+.detalle-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--espacio-l);
+  align-items: start;
+}
+
+.detalle-imagen {
+  width: 100%;
+  height: 420px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: var(--espacio-m);
+  border: 1px solid var(--borde-suave);
+}
+
+.detalle-descripcion h2 {
+  margin-bottom: var(--espacio-s);
+  font-size: 1.5rem;
+}
+
+.detalle-descripcion p {
+  line-height: 1.6;
+  margin-bottom: var(--espacio-m);
+}
+
+.detalle-specs-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-s);
+  margin-bottom: var(--espacio-m);
+}
+
+.detalle-spec-item {
+  background-color: var(--hueso);
+  border: 1px solid var(--borde-suave);
+  padding: 0.4rem 0.8rem;
+  font-family: var(--font-data);
+  font-size: 0.85rem;
+}
+
+.detalle-tarjeta-precio {
+  background-color: var(--hueso);
+  padding: var(--espacio-m);
+  border: 1px solid var(--borde-suave);
+}
+
+.detalle-tarjeta-precio__etiqueta {
+  font-family: var(--font-data);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--pizarra);
+  margin-bottom: 0.25rem;
+}
+
+.detalle-tarjeta-precio__valor {
+  font-size: 1.8rem;
+  color: var(--oxido);
+  margin-bottom: var(--espacio-m);
+}
+
+.detalle-tarjeta-precio .boton {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+/* ---------- Adaptación a celulares y tablets ---------- */
+@media (max-width: 768px) {
+  .detalle-seccion {
+    padding: var(--espacio-m) var(--espacio-s);
+  }
+
+  .detalle-grid {
+    grid-template-columns: 1fr;
+    gap: var(--espacio-m);
+  }
+
+  .detalle-imagen {
+    height: 250px;
+  }
+
+  .detalle-tarjeta-precio__valor {
+    font-size: 1.5rem;
+  }
+}
+/* ---------- Carrusel / Galería en Detalle ---------- */
+.detalle-carrusel {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: var(--espacio-m);
+  border: 1px solid var(--borde-suave);
+  background-color: var(--carbon);
+}
+
+.detalle-carrusel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.2s ease;
+}
+
+.detalle-carrusel__btn:hover {
+  background-color: var(--oxido);
+}
+
+.detalle-carrusel__btn--prev { left: 0; }
+.detalle-carrusel__btn--next { right: 0; }
+
+.detalle-carrusel__indicadores {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.4rem;
+}
+
+.detalle-carrusel__punto {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.detalle-carrusel__punto.activo {
+  background-color: var(--oxido);
+}
+
+/* ---------- Grid de Especificaciones con Iconos ---------- */
+.detalle-iconos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 1rem;
+  margin-bottom: var(--espacio-m);
+}
+
+.detalle-spec-card {
+  background-color: var(--hueso);
+  border: 1px solid var(--borde-suave);
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.detalle-spec-card svg {
+  stroke: var(--oxido);
+  margin-bottom: 0.2rem;
+}
+
+.detalle-spec-card__titulo {
+  font-family: var(--font-data);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--pizarra);
+}
+
+.detalle-spec-card__valor {
+  font-weight: bold;
+  color: var(--carbon);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .detalle-carrusel {
+    height: 280px;
+  }
+}
+
+/* ---------- Chips de especificaciones en tarjetas ---------- */
+.tarjeta-propiedad__specs {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 0.8rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--borde-suave);
+}
+
+.tarjeta-spec-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-data);
+  font-size: 0.8rem;
+  color: var(--pizarra);
+}
+
+.tarjeta-spec-chip svg {
+  stroke: var(--oxido);
+}
+
+/* ---------- Mapa de ubicación en Detalle ---------- */
+.detalle-mapa-contenedor {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--borde-suave);
+}
+
+.detalle-mapa-titulo {
+  font-family: var(--font-data);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--carbon);
+  margin-bottom: 0.8rem;
+}
+
+.detalle-mapa-frame {
+  width: 100%;
+  height: 200px;
+  border: 1px solid var(--borde-suave);
+  background-color: var(--hueso);
+  overflow: hidden;
+}
+
+.detalle-mapa-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ---------- Pie de tarjeta (Specs + WhatsApp) ---------- */
+.tarjeta-propiedad__pie {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--borde-suave);
+}
+
+.tarjeta-propiedad__specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.tarjeta-btn-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background-color: #25d366;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.38rem 0.65rem;
+  font-family: var(--font-data);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  flex-shrink: 0;
+}
+
+.tarjeta-btn-wa:hover {
+  background-color: #1ebe5d;
+  transform: translateY(-1px);
 }

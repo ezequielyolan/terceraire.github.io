@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle de Propiedad | Tercer Aire</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/componentes.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+  <header class="encabezado">
+    <nav class="nav">
+      <a href="index.html" class="nav__marca">
+        <img src="img/logo.png" alt="Logo Tercer Aire" class="nav__logo">
+      </a>
+      <input type="checkbox" id="navCheck" class="nav__check">
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Quiénes Somos</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="propiedades.html" class="activo">Propiedades</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+      <label class="nav__toggle" for="navCheck" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </label>
+    </nav>
+  </header>
+
+  <main>
+    <section class="pagina-header">
+      <div class="contenedor">
+        <p class="pagina-header__eyebrow" id="detalleZona">Zona</p>
+        <h1 class="pagina-header__titulo" id="detalleTitulo">Cargando propiedad...</h1>
+      </div>
+    </section>
+
+    <section class="contenedor detalle-seccion">
+      <div id="detalleContenido" class="detalle-grid">
+        <!-- Aquí se inyectarán dinámicamente las fotos y la descripción mediante JS -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="pie__franja">
+      <div class="contenedor pie__franja-interior">
+        <a href="index.html" class="pie__marca">
+          <img src="img/logo.png" alt="Logo Tercer Aire" class="pie__logo">
+        </a>
+        <h2 class="pie__lema"> <em> Donde se respira un nuevo comienzo. </em> </h2>
+      </div>
+    </div>
+    <div class="contenedor">
+      <div class="pie__grid">
+
+        <div class="pie__contacto">
+          <p class="pie__titulo-col">Contacto</p>
+          <div class="pie__social">
+            <a href="https://www.instagram.com/terceraire.inmo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/terceraire.inmo/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+          </div>
+          <ul class="pie__links">
+            <li>
+              <a href="mailto:terceraire.inmo@gmail.com">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/>
+                  <path d="m2 7 10 6 10-6"/>
+                </svg>
+                terceraire.inmo@gmail.com
+              </a>
+            </li>
+            <li>
+              <a href="tel:+5492664317453">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                +54 9 266 431 7453
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/5492665105831" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" stroke="none">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/>
+                </svg>
+                +54 9 266 510 5831
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="pie__navegacion">
+          <p class="pie__titulo-col">Navegación</p>
+          <ul class="pie__links pie__links--nav">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Quiénes Somos</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="propiedades.html">Propiedades</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="pie__legal">
+          <div class="pie__matricula">
+            <p class="pie__direccion">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              Cortaderas, San Luis
+            </p>
+            <p>Marcia Elizabeth Fernández</p>
+            <p>Martillera Pública y Corredora Inmobiliaria</p>
+            <p>M.P.N° 1170 - CMCPSL</p>
+          </div>
+          <div class="pie__qr">
+             <img src="img/qr.jpg" alt="Código QR de Certificado Online de Matricula">
+          </div>
+        </div>
+
+      </div>
+      <div class="pie__abajo">
+        <p>© 2026 Tercer Aire. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts necesarios -->
+  <script src="js/propiedades.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const idPropiedad = params.get('id');
+
+      // Busca la propiedad sin importar si el ID en la URL está en mayúsculas o minúsculas
+      const propiedad = listaPropiedades.find(p => 
+        idPropiedad && String(p.id).toLowerCase() === idPropiedad.toLowerCase()
+      );
+
+      if (propiedad) {
+        // Actualiza la cabecera superior oscura
+        document.getElementById('detalleZona').textContent = `${propiedad.zona} • REF: ${propiedad.id}`;
+        document.getElementById('detalleTitulo').textContent = propiedad.titulo;
+        document.title = `${propiedad.titulo} (${propiedad.id}) | Tercer Aire`;
+        
+        // Manejo de imágenes (soporta array 'imagenes' o string 'imagen')
+        let listaImagens = [];
+        if (propiedad.imagenes && Array.isArray(propiedad.imagenes)) {
+          listaImagens = propiedad.imagenes.map(img => img.includes('/') ? img : `img/${img}`);
+        } else if (propiedad.imagen) {
+          const unicaImg = propiedad.imagen.includes('/') ? propiedad.imagen : `img/${propiedad.imagen}`;
+          listaImagens = [unicaImg];
+        } else {
+          listaImagens = ['img/placeholder.jpg'];
+        }
+
+        let imagenActualIndex = 0;
+
+        // Renderizado del contenido principal
+        document.getElementById('detalleContenido').innerHTML = `
+          <div class="detalle-descripcion">
+            <!-- CARRUSEL DE IMÁGENES -->
+            <div class="detalle-carrusel" id="carruselContenedor" style="background-image: url('${listaImagens[0]}');">
+              ${listaImagens.length > 1 ? `
+                <button type="button" class="detalle-carrusel__btn detalle-carrusel__btn--prev" id="btnPrev">❮</button>
+                <button type="button" class="detalle-carrusel__btn detalle-carrusel__btn--next" id="btnNext">❯</button>
+                <div class="detalle-carrusel__indicadores" id="carruselPuntos">
+                  ${listaImagens.map((_, i) => `<button type="button" class="detalle-carrusel__punto ${i === 0 ? 'activo' : ''}" data-index="${i}"></button>`).join('')}
+                </div>
+              ` : ''}
+            </div>
+            
+            <!-- CÓDIGO DE REFERENCIA LIMPIO -->
+            <div style="margin-bottom: 1rem;">
+              <span style="font-family: var(--font-data); font-size: 0.85rem; color: var(--oxido); font-weight: bold; text-transform: uppercase; background-color: var(--hueso); padding: 0.35rem 0.75rem; border: 1px solid var(--borde-suave); display: inline-block;">
+                Código de Referencia: ${propiedad.id}
+              </span>
+            </div>
+            
+            <!-- GRILLA DE ICONOS Y ESPECIFICACIONES -->
+            <div class="detalle-iconos-grid">
+              <div class="detalle-spec-card">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                <span class="detalle-spec-card__titulo">Operación</span>
+                <span class="detalle-spec-card__valor" style="text-transform: uppercase;">${propiedad.operacion}</span>
+              </div>
+
+              <div class="detalle-spec-card">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                <span class="detalle-spec-card__titulo">Ambientes</span>
+                <span class="detalle-spec-card__valor">${propiedad.ambientes}</span>
+              </div>
+
+              ${propiedad.dormitorios !== undefined ? `
+              <div class="detalle-spec-card">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4v16"></path><path d="M2 8h18a2 2 0 0 1 2 2v10"></path><path d="M2 17h20"></path><path d="M6 8v9"></path></svg>
+                <span class="detalle-spec-card__titulo">Dormitorios</span>
+                <span class="detalle-spec-card__valor">${propiedad.dormitorios} Dorm.</span>
+              </div>` : ''}
+
+              ${propiedad.banos !== undefined ? `
+              <div class="detalle-spec-card">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6h6"></path><path d="M12 3v3"></path><path d="M4 11h16v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8z"></path></svg>
+                <span class="detalle-spec-card__titulo">Baños</span>
+                <span class="detalle-spec-card__valor">${propiedad.banos} Baños</span>
+              </div>` : ''}
+
+              <div class="detalle-spec-card">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                <span class="detalle-spec-card__titulo">Superficie</span>
+                <span class="detalle-spec-card__valor">${propiedad.superficie}</span>
+              </div>
+
+              ${propiedad.cochera ? `
+              <div class="detalle-spec-card">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                <span class="detalle-spec-card__titulo">Cochera</span>
+                <span class="detalle-spec-card__valor">${propiedad.cochera}</span>
+              </div>` : ''}
+            </div>
+
+            <h2>Descripción de la propiedad</h2>
+            <p>${propiedad.descripcion || `Excelente propiedad ubicada en ${propiedad.zona}, ideada para aprovechar al máximo las comodidades y el entorno natural.`}</p>
+          </div>
+
+          <aside class="detalle-tarjeta-precio">
+            <p class="detalle-tarjeta-precio__etiqueta">Valor de la propiedad</p>
+            <h3 class="detalle-tarjeta-precio__valor">${propiedad.precioTexto}</h3>
+            <a href="contacto.html" class="boton boton--primario">Consultar por esta propiedad</a>
+            <!-- BOTÓN DINÁMICO DE WHATSAPP -->
+            <a href="https://wa.me/5492665105831?text=${encodeURIComponent(`Hola! Me interesa la propiedad ${propiedad.id} - ${propiedad.titulo} (${propiedad.precioTexto}). Quisiera más información.`)}" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="boton boton--primario" 
+               style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; background-color: #25d366; border-color: #25d366; color: #fff;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.198-.198.347-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+              Consultar por WhatsApp
+            </a>
+            <a href="propiedades.html" style="display: block; text-align: center; margin-top: 1rem; font-size: 0.9rem; color: var(--pizarra);">← Volver al catálogo</a>
+
+            <!-- MAPA DE UBICACIÓN -->
+            <div class="detalle-mapa-contenedor">
+              <h4 class="detalle-mapa-titulo">Ubicación aproximada</h4>
+              <div class="detalle-mapa-frame" id="contenedorMapa">
+                <!-- El mapa se cargará dinámicamente aquí -->
+              </div>
+            </div>
+          </aside>
+        `;
+
+        // Inyectar el mapa de la propiedad si está disponible
+        const contenedorMapa = document.getElementById('contenedorMapa');
+        if (contenedorMapa && propiedad.mapaHtml) {
+          contenedorMapa.innerHTML = propiedad.mapaHtml;
+        } else if (contenedorMapa) {
+          contenedorMapa.innerHTML = '<p style="padding: 1rem; font-size: 0.8rem; text-align: center; color: var(--pizarra);">Mapa no disponible</p>';
+        }
+
+        // Lógica del Carrusel interactivo
+        if (listaImagens.length > 1) {
+          const contenedorImg = document.getElementById('carruselContenedor');
+          const btnPrev = document.getElementById('btnPrev');
+          const btnNext = document.getElementById('btnNext');
+          const puntos = document.querySelectorAll('.detalle-carrusel__punto');
+
+          function actualizarCarrusel() {
+            contenedorImg.style.backgroundImage = `url('${listaImagens[imagenActualIndex]}')`;
+            puntos.forEach((p, idx) => {
+              p.classList.toggle('activo', idx === imagenActualIndex);
+            });
+          }
+
+          btnNext.addEventListener('click', () => {
+            imagenActualIndex = (imagenActualIndex + 1) % listaImagens.length;
+            actualizarCarrusel();
+          });
+
+          btnPrev.addEventListener('click', () => {
+            imagenActualIndex = (imagenActualIndex - 1 + listaImagens.length) % listaImagens.length;
+            actualizarCarrusel();
+          });
+
+          puntos.forEach(punto => {
+            punto.addEventListener('click', (e) => {
+              imagenActualIndex = parseInt(e.target.getAttribute('data-index'));
+              actualizarCarrusel();
+            });
+          });
+        }
+
+      } else {
+        document.getElementById('detalleTitulo').textContent = "Propiedad no encontrada";
+        document.getElementById('detalleContenido').innerHTML = `
+          <div style="grid-column: 1 / -1;">
+            <p>Lo sentimos, la propiedad que buscás no existe o fue eliminada.</p>
+            <a href="propiedades.html" class="boton boton--primario" style="display: inline-block; margin-top: 1rem;">Volver al catálogo</a>
+          </div>
+        `;
+      }
+    });
+  </script>
+</body>
+</html>
