@@ -4,7 +4,8 @@
 // DP -> Departamento
 // HT -> Hectárea
 // CM -> Campo
-// CH -> Complejos Habitacionales
+// CH -> Complejo Habitacional
+// LC -> Local
 
 // Ej: CS-001 | Casa en Balcones de Balcarce, Cortaderas
 // CH-001 | PROPIEDAD C/ 8 UNIDADES, Juana Koslay
@@ -326,4 +327,137 @@ Una oportunidad para disfrutar de Cortaderas y su entorno natural.⁣
 ⁣
 📩 Consultanos para recibir más información o coordinar una visita.⁣`
   },
+{
+    id: "DP-001",
+    titulo: "Monoambiente en Carpintería.⁣",
+    tipo: "departamento",
+    operacion: "alquiler",
+    zona: "Carpintería",
+    moneda: "ARS",
+    valorNum: 325000,
+    precioTexto: "ARS 325.000",
+    ambientes: "1 Ambientes",
+    dormitorios: 1,
+    banos: 1,
+    superficie: " ",
+    superficieCubierta: "25 m²",
+    extras: [""],
+    mapaHtml: '<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d877.1892567660198!2d-65.01143540166844!3d-32.4082611496484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzLCsDI0JzI5LjciUyA2NcKwMDAnMzguOSJX!5e1!3m2!1ses!2sar!4v1794417273043!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>',
+    imagenes: [
+      "props/DP/DP-001/dp00101.jpg",
+      "props/DP/DP-001/dp00102.jpg",
+      "props/DP/DP-001/dp00103.jpg",
+      "props/DP/DP-001/dp00104.jpg",
+      "props/DP/DP-001/dp00105.jpg",
+      "props/DP/DP-001/dp00106.jpg",
+      "props/DP/DP-001/dp00107.jpg",
+      "props/DP/DP-001/dp00108.jpg",
+      "props/DP/DP-001/dp00109.jpg",
+      "props/DP/DP-001/dp00110.jpg",
+      "props/DP/DP-001/dp00111.jpg"
+    ],
+    descripcion: `Si buscás un espacio propio, funcional y cerca de todo, esta puede ser una buena opción.⁣
+⁣
+📌Monoambientes en planta alta, ubicados a pocos metros de la plaza principal de Carpintería.⁣
+⁣
+Características:⁣
+✓25 m² ⁣
+✓En planta alta.⁣
+✓Ideales para una persona sola.⁣
+✓Excelente ubicación, a pasos del centro.⁣
+⁣
+Requisitos de ingreso:⁣
+⁣
+* 1 mes de alquiler por adelantado.⁣
+* 1 mes de depósito.⁣
+* 1 mes de contrato.
+⁣
+📲 Consultanos para conocer más detalles y coordinar una visita.⁣⁣`
+  },
+{
+    id: "LC-001",
+    titulo: "Locales en ALQUILER en Carpintería⁣",
+    tipo: "local",
+    operacion: "alquiler",
+    zona: "Carpintería",
+    moneda: "ARS",
+    valorNum: 280000,
+    precioTexto: "ARS 280.000",
+    ambientes: "1 Ambientes",
+    dormitorios: 0,
+    banos: 1,
+    superficie: "",
+    superficieCubierta: "25 m²",
+    extras: ["patio"],
+    mapaHtml: '',
+    imagenes: [
+      "props/LC/LC-001/lc00101.jpg",
+      "props/LC/LC-001/lc00102.jpg",
+      "props/LC/LC-001/lc00103.jpg",
+      "props/LC/LC-001/lc00104.jpg",
+      "props/LC/LC-001/lc00105.jpg"
+    ],
+    descripcion: `Una oportunidad para desarrollar tu actividad o encontrar un espacio propio en una ubicación práctica y cercana al centro de Carpintería.⁣
+⁣
+📌Ubicados a solo 3 cuadras de la plaza principal, en dirección a las sierras, estos locales ofrecen distintas posibilidades de uso:⁣
+⁣
+✓25 m² cubiertos.⁣
+✓Pequeño patio privado.⁣
+✓Aptos para local comercial, oficina o vivienda tipo monoambiente.⁣
+⁣
+Requisitos de ingreso:⁣
+⁣
+* 1 mes de depósito.⁣
+* 1 mes de honorarios/contrato.⁣
+* 1 mes de alquiler por adelantado.⁣
+⁣
+📲 Consultanos para conocer más detalles y coordinar una visita.⁣⁣`
+  },
+{
+    id: "CS-005",
+    titulo: "Casa EN VENTA EN CORTADERAS c/ piscina⁣",
+    tipo: "casa",
+    operacion: "venta",
+    zona: "Cortaderas",
+    moneda: "USD",
+    valorNum: 79000,
+    precioTexto: "USD 79.000",
+    ambientes: "4 Ambientes",
+    dormitorios: 2,
+    banos: 1,
+    superficie: "1.440 m²",
+    superficieCubierta: "99 m²",
+    extras: ["patio", "parrilla", "cochera", "mascotas", "pileta"],
+    mapaHtml: '<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3505.75475901872!2d-65.00237299999999!3d-32.485406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzLCsDI5JzA3LjUiUyA2NcKwMDAnMDguNSJX!5e1!3m2!1ses!2sar!4v1794425125971!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>',
+    imagenes: [
+      "props/CS/CS-005/cs00501.jpg",
+      "props/CS/CS-005/cs00502.jpg",
+      "props/CS/CS-005/cs00503.jpg",
+      "props/CS/CS-005/cs00504.jpg",
+      "props/CS/CS-005/cs00505.jpg"
+    ],
+    descripcion: `En Cortaderas, a pocos metros de la Ruta Provincial N.º 1, te presentamos esta propiedad que combina amplitud, comodidad y espacios pensados para disfrutar.⁣
+⁣
+Ubicada sobre un lote de 1.440 m², cuenta con una vivienda de 99 m² cubiertos y 33 m² semicubiertos, distribuidos en:⁣
+⁣
+✓Dos habitaciones.⁣
+✓Amplio baño con ventiluz de doble abertura.⁣
+✓Living.⁣
+✓Cocina comedor con amplias ventanas.⁣
+✓Un ambiente adicional, ideal para utilizar como taller, espacio de trabajo o dormitorio.⁣
+⁣
+🏡Además, cuenta con un departamento adosado a la vivienda, con acceso independiente, compuesto por un ambiente y baño propio. Una alternativa que amplía las posibilidades de uso de la propiedad.⁣
+⁣
+🌿 𝗣𝗮𝗿𝗮 𝗱𝗶𝘀𝗳𝗿𝘂𝘁𝗮𝗿 𝗮𝗹 𝗮𝗶𝗿𝗲 𝗹𝗶𝗯𝗿𝗲:⁣
+⁣
+✓Piscina de 8 x 3,50 metros con iluminación.⁣
+✓Galería y cochera.⁣
+✓Parrilla con mesa y banco de cemento.⁣
+⁣
+📍 Ubicación: Cortaderas, a 250 metros de Ruta Provincial N.º 1, km 16/17.⁣
+⁣
+Una propiedad con espacios versátiles, ambientes independientes y todo lo necesario para disfrutar del entorno serrano.⁣
+⁣
+🙌Contactanos para recibir más información o coordinar una visita.⁣⁣`
+  }
 ];
