@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
   const grilla = document.getElementById('grillaPropiedades');
+  const resultadoVacio = document.getElementById('resultadoVacio');
+  const paginacionContenedor = document.getElementById('paginacionContenedor');
+  
   const btnBuscar = document.getElementById('btnBuscar');
-  const mensajeVacio = document.getElementById('resultadoVacio');
-
   const filtroTipo = document.getElementById('filtroTipo');
   const filtroOperacion = document.getElementById('filtroOperacion');
   const filtroZona = document.getElementById('filtroZona');
@@ -12,37 +13,54 @@ document.addEventListener('DOMContentLoaded', () => {
   const filtroBanos = document.getElementById('filtroBanos');
   const filtroDormitorios = document.getElementById('filtroDormitorios');
 
-  // Referencias para el acordeón de filtros en celular
-  const btnToggleFiltros = document.getElementById('btnToggleFiltros');
-  const panelFiltros = document.getElementById('panelFiltros');
-  const textoToggleFiltros = document.getElementById('textoToggleFiltros');
+  // Configuración de paginación
+  const propiedadesPorPagina = 12;
+  let paginaActual = 1;
+  let resultadosActuales = [];
 
-  if (btnToggleFiltros && panelFiltros) {
-    btnToggleFiltros.addEventListener('click', () => {
-      const estaAbierto = panelFiltros.classList.toggle('abierto');
-      btnToggleFiltros.setAttribute('aria-expanded', estaAbierto);
-      if (textoToggleFiltros) {
-        textoToggleFiltros.textContent = estaAbierto ? 'Ocultar filtros' : 'Filtrar propiedades';
-      }
-    });
+  // Función para obtener la lista actual de favoritos
+  function obtenerFavoritos() {
+    return JSON.parse(localStorage.getItem('tercerAireFavoritos')) || [];
   }
 
-  if (!grilla) return;
+  // Actualiza el contador del nav si el enlace existe
+  function actualizarContadorNav() {
+    const linkFavs = document.getElementById('linkFavoritos');
+    if (linkFavs) {
+      const favs = obtenerFavoritos();
+      linkFavs.textContent = `Favoritos (${favs.length})`;
+    }
+  }
 
-function mostrarPropiedades(props) {
+  function renderizarPropiedades() {
     grilla.innerHTML = '';
     
-    if (props.length === 0) {
-      mensajeVacio.style.display = 'block';
+    if (typeof listaPropiedades === 'undefined') {
+      if (resultadoVacio) resultadoVacio.style.display = 'block';
       return;
-    } else {
-      mensajeVacio.style.display = 'none';
     }
 
-props.forEach(p => {
+    if (!resultadosActuales || resultadosActuales.length === 0) {
+      if (resultadoVacio) resultadoVacio.style.display = 'block';
+      if (paginacionContenedor) paginacionContenedor.innerHTML = '';
+      const pagSup = document.getElementById('paginacionSuperior');
+      if (pagSup) pagSup.innerHTML = '';
+      return;
+    }
+
+    if (resultadoVacio) resultadoVacio.style.display = 'none';
+
+    // Calcular qué propiedades mostrar según la página actual
+    const inicio = (paginaActual - 1) * propiedadesPorPagina;
+    const fin = inicio + propiedadesPorPagina;
+    const propiedadesPagina = resultadosActuales.slice(inicio, fin);
+
+    const favsActuales = obtenerFavoritos();
+
+    propiedadesPagina.forEach(p => {
       const tarjeta = document.createElement('article');
       tarjeta.classList.add('tarjeta-propiedad');
-      
+
       let rutaImagen = "img/placeholder.jpg";
       if (p.imagenes && Array.isArray(p.imagenes) && p.imagenes.length > 0) {
         rutaImagen = p.imagenes[0].includes('/') ? p.imagenes[0] : `img/${p.imagenes[0]}`;
@@ -50,19 +68,28 @@ props.forEach(p => {
         rutaImagen = p.imagen.includes('/') ? p.imagen : `img/${p.imagen}`;
       }
 
-const mensajeWa = encodeURIComponent(`Hola! Me interesa la propiedad ${p.id} - ${p.titulo} (${p.precioTexto}). Quisiera más información.`);
+      const mensajeWa = encodeURIComponent(`Hola! Me interesa la propiedad ${p.id} - ${p.titulo} (${p.precioTexto}). Quisiera más información.`);
       const urlWa = `https://wa.me/5492665105831?text=${mensajeWa}`;
+
+      const esFav = favsActuales.includes(p.id);
 
       tarjeta.innerHTML = `
         <a href="detalle.html?id=${p.id}" class="tarjeta-propiedad__enlace">
-          <div class="tarjeta-propiedad__imagen" style="background-image: url('${rutaImagen}');">
+          <div class="tarjeta-propiedad__imagen" style="background-image: url('${rutaImagen}'); position: relative;">
             <span class="tarjeta-propiedad__etiqueta">${p.operacion}</span>
+            <!-- BOTÓN DE FAVORITOS (CORAZÓN) -->
+            <button type="button" 
+                    class="btn-favorito ${esFav ? 'activo' : ''}" 
+                    data-id="${p.id}" 
+                    title="${esFav ? 'Quitar de favoritos' : 'Guardar en favoritos'}" 
+                    style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.65); color: ${esFav ? '#e74c3c' : '#ffffff'}; border: none; border-radius: 50%; width: 34px; height: 34px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; z-index: 2; transition: transform 0.2s ease, color 0.2s ease;">
+              ${esFav ? '♥' : '♡'}
+            </button>
           </div>
           <div class="tarjeta-propiedad__cuerpo">
             <span style="font-family: var(--font-data); font-size: 0.75rem; color: var(--oxido); font-weight: bold; text-transform: uppercase; display: block; margin-bottom: 0.2rem;">
               Ref: ${p.id}
             </span>
-
             <p class="tarjeta-propiedad__zona">${p.zona}</p>
             <h3 class="tarjeta-propiedad__titulo">${p.titulo}</h3>
             <p class="tarjeta-propiedad__precio">${p.precioTexto}</p>
@@ -79,7 +106,6 @@ const mensajeWa = encodeURIComponent(`Hola! Me interesa la propiedad ${p.id} - $
                 </span>
               </div>
 
-              <!-- BOTÓN DIRECTO DE WHATSAPP -->
               <button type="button" 
                       class="tarjeta-btn-wa" 
                       title="Consultar por WhatsApp"
@@ -91,25 +117,103 @@ const mensajeWa = encodeURIComponent(`Hola! Me interesa la propiedad ${p.id} - $
           </div>
         </a>
       `;
+
+      // Evento del botón Favorito dentro de la tarjeta
+      const btnFav = tarjeta.querySelector('.btn-favorito');
+      btnFav.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        let favs = obtenerFavoritos();
+        if (favs.includes(p.id)) {
+          favs = favs.filter(id => id !== p.id);
+          btnFav.textContent = '♡';
+          btnFav.style.color = '#ffffff';
+          btnFav.title = 'Guardar en favoritos';
+        } else {
+          favs.push(p.id);
+          btnFav.textContent = '♥';
+          btnFav.style.color = '#e74c3c';
+          btnFav.title = 'Quitar de favoritos';
+        }
+
+        localStorage.setItem('tercerAireFavoritos', JSON.stringify(favs));
+        actualizarContadorNav();
+      });
+
       grilla.appendChild(tarjeta);
     });
+
+    renderizarBotonesPaginacion();
   }
 
-function ejecutarBusqueda() {
-    const tipo = filtroTipo.value.toLowerCase();
-    const op = filtroOperacion.value.toLowerCase();
-    const zona = filtroZona.value.toLowerCase();
-    const moneda = filtroMoneda.value.toUpperCase();
-    const min = precioDesde.value ? parseFloat(precioDesde.value) : 0;
-    const max = precioHasta.value ? parseFloat(precioHasta.value) : Infinity;
-    const banosMin = filtroBanos.value ? parseInt(filtroBanos.value) : 0;
-    const dormsMin = filtroDormitorios.value ? parseInt(filtroDormitorios.value) : 0;
+  function renderizarBotonesPaginacion() {
+    const contenedorInferior = document.getElementById('paginacionContenedor');
+    const contenedorSuperior = document.getElementById('paginacionSuperior');
+    
+    if (contenedorInferior) contenedorInferior.innerHTML = '';
+    if (contenedorSuperior) contenedorSuperior.innerHTML = '';
 
-    // Capturar cuáles checkboxes están tildados
-    const checkboxesSeleccionados = Array.from(document.querySelectorAll('input[name="comodidad"]:checked'))
-      .map(cb => cb.value);
+    const totalPaginas = Math.ceil(resultadosActuales.length / propiedadesPorPagina);
+    if (totalPaginas <= 1) return;
 
-      const resultado = listaPropiedades.filter(p => {
+    const estiloBase = 'padding: 0.5rem 1rem; border-radius: 4px; font-weight: 600; cursor: pointer; transition: all 0.2s ease;';
+
+    function construirBotones() {
+      const fragmento = document.createDocumentFragment();
+
+      if (paginaActual > 1) {
+        const btnAnt = document.createElement('button');
+        btnAnt.textContent = '« Anterior';
+        btnAnt.style.cssText = `${estiloBase} background-color: var(--hueso, #f4f1ea); color: var(--pizarra, #333); border: 1px solid var(--borde-suave, #ddd);`;
+        btnAnt.onclick = () => { paginaActual--; renderizarPropiedades(); window.scrollTo({ top: 0, behavior: 'smooth' }); };
+        fragmento.appendChild(btnAnt);
+      }
+
+      for (let i = 1; i <= totalPaginas; i++) {
+        const btnPag = document.createElement('button');
+        btnPag.textContent = i;
+        
+        if (i === paginaActual) {
+          btnPag.style.cssText = `${estiloBase} background-color: var(--oxido, #c0392b); color: #ffffff; border: 1px solid var(--oxido, #c0392b);`;
+        } else {
+          btnPag.style.cssText = `${estiloBase} background-color: var(--hueso, #f4f1ea); color: var(--pizarra, #333); border: 1px solid var(--borde-suave, #ddd);`;
+        }
+
+        btnPag.onclick = () => { paginaActual = i; renderizarPropiedades(); window.scrollTo({ top: 0, behavior: 'smooth' }); };
+        fragmento.appendChild(btnPag);
+      }
+
+      if (paginaActual < totalPaginas) {
+        const btnSig = document.createElement('button');
+        btnSig.textContent = 'Siguiente »';
+        btnSig.style.cssText = `${estiloBase} background-color: var(--hueso, #f4f1ea); color: var(--pizarra, #333); border: 1px solid var(--borde-suave, #ddd);`;
+        btnSig.onclick = () => { paginaActual++; renderizarPropiedades(); window.scrollTo({ top: 0, behavior: 'smooth' }); };
+        fragmento.appendChild(btnSig);
+      }
+
+      return fragmento;
+    }
+
+    if (contenedorSuperior) contenedorSuperior.appendChild(construirBotones());
+    if (contenedorInferior) contenedorInferior.appendChild(construirBotones());
+  }
+
+  function ejecutarBusqueda() {
+    const tipo = filtroTipo ? filtroTipo.value : '';
+    const op = filtroOperacion ? filtroOperacion.value : '';
+    const zona = filtroZona ? filtroZona.value : '';
+    const moneda = filtroMoneda ? filtroMoneda.value : '';
+    const min = (precioDesde && precioDesde.value) ? parseFloat(precioDesde.value) : 0;
+    const max = (precioHasta && precioHasta.value) ? parseFloat(precioHasta.value) : Infinity;
+    const banosMin = (filtroBanos && filtroBanos.value) ? parseInt(filtroBanos.value) : 0;
+    const dormsMin = (filtroDormitorios && filtroDormitorios.value) ? parseInt(filtroDormitorios.value) : 0;
+
+    const checkboxesSeleccionados = Array.from(
+      document.querySelectorAll('input[name="comodidad"]:checked')
+    ).map(cb => cb.value);
+
+    resultadosActuales = listaPropiedades.filter(p => {
       const matchTipo = tipo === '' || p.tipo === tipo;
       const matchOp = op === '' || p.operacion === op;
       const matchZona = zona === '' || p.zona.toLowerCase() === zona.toLowerCase();
@@ -117,29 +221,55 @@ function ejecutarBusqueda() {
       const matchPrecio = p.valorNum >= min && p.valorNum <= max;
       const matchBanos = (p.banos || 0) >= banosMin;
       const matchDorms = (p.dormitorios || 0) >= dormsMin;
-
-      // Valida que la propiedad tenga TODAS las comodidades que el usuario tildó
-        const matchExtras = checkboxesSeleccionados.every(extra => 
+      const matchExtras = checkboxesSeleccionados.every(extra => 
         p.extras && p.extras.includes(extra)
       );
 
       return matchTipo && matchOp && matchZona && matchMoneda && matchPrecio && matchBanos && matchDorms && matchExtras;
     });
 
-    mostrarPropiedades(resultado);
-
-    if (panelFiltros && panelFiltros.classList.contains('abierto')) {
-      panelFiltros.classList.remove('abierto');
-      if (btnToggleFiltros) btnToggleFiltros.setAttribute('aria-expanded', 'false');
-      if (textoToggleFiltros) textoToggleFiltros.textContent = 'Filtrar propiedades';
-    }
+    paginaActual = 1;
+    renderizarPropiedades();
   }
 
-  // Filtrar al hacer clic en el botón "Buscar"
   if (btnBuscar) {
     btnBuscar.addEventListener('click', ejecutarBusqueda);
   }
 
-  // Carga inicial
-  mostrarPropiedades(listaPropiedades);
+  // Carga inicial y contador del menú
+  actualizarContadorNav();
+  if (typeof listaPropiedades !== 'undefined') {
+    resultadosActuales = listaPropiedades;
+    renderizarPropiedades();
+  }
+  // Sincronizar contadores de favoritos en toda la página
+  function actualizarContadoresGlobales() {
+    const favs = JSON.parse(localStorage.getItem('tercerAireFavoritos')) || [];
+    
+    // Actualizar badge del botón flotante
+    const badge = document.getElementById('badgeFavCount');
+    if (badge) {
+      if (favs.length > 0) {
+        badge.textContent = favs.length;
+        badge.style.display = 'flex';
+      } else {
+        badge.style.display = 'none';
+      }
+    }
+
+    // Actualizar banner en la página de propiedades (si existe)
+    const banner = document.getElementById('bannerFavoritosCatalogo');
+    const numBanner = document.getElementById('numFavsBanner');
+    if (banner && numBanner) {
+      if (favs.length > 0) {
+        numBanner.textContent = favs.length;
+        banner.style.display = 'flex';
+      } else {
+        banner.style.display = 'none';
+      }
+    }
+  }
+
+  // Ejecutar al cargar la página
+  actualizarContadoresGlobales();
 });

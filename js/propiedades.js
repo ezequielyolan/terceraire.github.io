@@ -461,5 +461,93 @@ Ubicada sobre un lote de 1.440 m², cuenta con una vivienda de 99 m² cubiertos 
 Una propiedad con espacios versátiles, ambientes independientes y todo lo necesario para disfrutar del entorno serrano.⁣
 ⁣
 🙌Contactanos para recibir más información o coordinar una visita.⁣⁣`
-  }
+  },
+{
+    id: "LT-003",
+    titulo: "LOTE ESQUINA en Carpintería. Ubicación céntrica + plano aprobado. CON FINANCIACIÓN",
+    tipo: "lote",
+    operacion: "venta",
+    zona: "Carpintería",
+    moneda: "USD",
+    valorNum: 23000,
+    precioTexto: "USD 23.000",
+    ambientes: "Lote / Terreno",
+    superficie: "400 m²",
+    extras: ["patio"],
+    mapaHtml: '<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3508.744242597531!2d-65.006925!3d-32.40859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzLCsDI0JzMwLjkiUyA2NcKwMDAnMjQuOSJX!5e1!3m2!1ses!2sar!4v1794691671774!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>',
+    imagenes: [
+      "props/LT/LT-003/lt00301.jpg",
+      "props/LT/LT-003/lt00302.jpg",
+      "props/LT/LT-003/lt00303.jpg",
+      "props/LT/LT-003/lt00304.jpg",
+    ],
+    descripcion: `Una excelente oportunidad para quienes buscan construir en una zona céntrica, con buenos accesos y cerca de los principales puntos de Carpintería - San Luis.
+⁣
+📍 Ubicación: lote esquina de 400 m², a:⁣
+⁣
+* 1 cuadra de Pedro Ponce (asfalto).⁣
+* 3 cuadras de la avenida principal.⁣
+* 5 cuadras de la plaza.⁣
+⁣
+Características del terreno:⁣
+⁣
+✓16 m de frente al Este x 28 m de frente al Sur.⁣
+✓Plano aprobado para construir una vivienda de 55 m² cubiertos y 15 m² semicubiertos.⁣
+✓Pilar de luz instalado (sin conexión).⁣
+✓Terreno desmalezado, semialambrado y arbolado.⁣
+⁣
+👌Además, cuenta con el servicio de Rentas abonado por todo el año 2026.⁣
+⁣
+Posibilidad de financiación con una entrega del 50%.⁣
+⁣
+🤝Contactanos para recibir más información o coordinar una visita.⁣⁣⁣`
+  },
+{
+    id: "CS-006",
+    titulo: "ALQUILER | CASA EN CORTADERAS - SAN LUIS",
+    tipo: "casa",
+    operacion: "alquiler",
+    zona: "Cortaderas",
+    moneda: "ARS",
+    valorNum: 500000,
+    precioTexto: "ARS 500.000",
+    ambientes: "3 Ambientes",
+    dormitorios: 2,
+    banos: 1,
+    superficie: "330 m²",
+    superficieCubierta: "65 m²",
+    extras: ["patio", "mascotas"],
+    mapaHtml: '<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3505.0293617565053!2d-64.99625999999999!3d-32.504021!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzLCsDMwJzE0LjUiUyA2NMKwNTknNDYuNSJX!5e1!3m2!1ses!2sar!4v1794694004355!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>',
+    imagenes: [
+      "props/CS/CS-006/cs00601.jpg",
+      "props/CS/CS-006/cs00602.jpg",
+      "props/CS/CS-006/cs00603.jpg",
+      "props/CS/CS-006/cs00604.jpg",
+      "props/CS/CS-006/cs00605.jpg",
+      "props/CS/CS-006/cs00606.jpg",
+      "props/CS/CS-006/cs00607.jpg",
+      "props/CS/CS-006/cs00608.jpg",
+      "props/CS/CS-006/cs00609.jpg"
+    ],
+    descripcion: `Vivienda de 65 m2 en terreno de 330 m2⁣
+⁣
+Cuenta con:⁣
+✓2 habitaciones⁣
+✓cocina comedor⁣
+✓baño ⁣
+✓patio⁣
+⁣
+📌Ubicada en Cortaderas centro. A pocas cuadras de la plaza principal. ⁣
+⁣
+📄Contrato a 1 año con aumento cuatrimestral por IPC.⁣
+▫️Precio inicial: $500.000⁣
+⁣
+Requisitos para ingresar: ⁣
+✓mes de anticipo⁣
+✓mes de depósito ⁣
+✓mes de contrato inmobiliario.⁣
+⁣
+✉️Escribinos para agendar una visita.⁣⁣`
+  },
+
 ];

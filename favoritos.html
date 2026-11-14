@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Propiedades Favoritas | Tercer Aire</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/componentes.css">
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+  <header class="encabezado">
+    <nav class="nav">
+      <a href="index.html" class="nav__marca">
+        <img src="img/logo.png" alt="Logo Tercer Aire" class="nav__logo">
+      </a>
+      <input type="checkbox" id="navCheck" class="nav__check">
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Quiénes Somos</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="propiedades.html">Propiedades</a></li>
+        <li><a href="favoritos.html" class="activo" id="linkFavoritos">Favoritos (0)</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+      <label class="nav__toggle" for="navCheck" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </label>
+    </nav>
+  </header>
+
+  <main>
+    <section class="pagina-header">
+      <div class="contenedor">
+        <p class="pagina-header__eyebrow">Tus elegidas</p>
+        <h1 class="pagina-header__titulo">Propiedades Guardadas</h1>
+      </div>
+    </section>
+
+    <section class="contenedor" style="padding: 3rem 0;">
+      <!-- ACCIÓN MASIVA POR WHATSAPP -->
+      <div id="contenedorAccionWa" style="display: none; margin-bottom: 2rem; text-align: right;">
+        <button type="button" id="btnConsultarTodas" class="boton boton--primario" style="background-color: #25d366; border-color: #25d366; color: #fff; display: inline-flex; align-items: center; gap: 0.5rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.198-.198.347-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+          Consultar por todas mis favoritas en WhatsApp
+        </button>
+      </div>
+
+      <!-- GRILLA DE FAVORITAS -->
+      <div class="catalogo__grid" id="grillaFavoritos"></div>
+      
+      <!-- ESTADO VACÍO -->
+      <div id="vacioFavoritos" style="text-align: center; padding: 4rem 1rem; display: none;">
+        <h3 style="margin-bottom: 1rem; color: var(--pizarra);">No tienes propiedades guardadas</h3>
+        <p style="margin-bottom: 2rem; color: #666;">Explora nuestro catálogo y haz clic en el ícono de favoritos para guardarlas aquí.</p>
+        <a href="propiedades.html" class="boton boton--primario">Ver catálogo de propiedades</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="pie__franja">
+      <div class="contenedor pie__franja-interior">
+        <a href="index.html" class="pie__marca">
+          <img src="img/logo.png" alt="Logo Tercer Aire" class="pie__logo">
+        </a>
+        <h2 class="pie__lema"> <em> Donde se respira un nuevo comienzo. </em> </h2>
+      </div>
+    </div>
+    <div class="contenedor">
+      <div class="pie__grid">
+        <!-- Pie estandar -->
+      </div>
+      <div class="pie__abajo">
+        <p>© 2026 Tercer Aire. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/propiedades.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const grilla = document.getElementById('grillaFavoritos');
+      const vacio = document.getElementById('vacioFavoritos');
+      const contenedorAccionWa = document.getElementById('contenedorAccionWa');
+      const btnConsultarTodas = document.getElementById('btnConsultarTodas');
+      const linkFavs = document.getElementById('linkFavoritos');
+
+      function obtenerFavoritos() {
+        return JSON.parse(localStorage.getItem('tercerAireFavoritos')) || [];
+      }
+
+      function actualizarContadorNav() {
+        const favs = obtenerFavoritos();
+        if (linkFavs) linkFavs.textContent = `Favoritos (${favs.length})`;
+      }
+
+      function renderizarFavoritos() {
+        actualizarContadorNav();
+        const favsIds = obtenerFavoritos();
+
+        if (favsIds.length === 0) {
+          if (grilla) grilla.innerHTML = '';
+          if (vacio) vacio.style.display = 'block';
+          if (contenedorAccionWa) contenedorAccionWa.style.display = 'none';
+          return;
+        }
+
+        if (vacio) vacio.style.display = 'none';
+        if (contenedorAccionWa) contenedorAccionWa.style.display = 'block';
+        if (grilla) grilla.innerHTML = '';
+
+        const propiedadesFavs = listaPropiedades.filter(p => favsIds.includes(p.id));
+
+        propiedadesFavs.forEach(p => {
+          const tarjeta = document.createElement('article');
+          tarjeta.classList.add('tarjeta-propiedad');
+
+          let rutaImagen = "img/placeholder.jpg";
+          if (p.imagenes && Array.isArray(p.imagenes) && p.imagenes.length > 0) {
+            rutaImagen = p.imagenes[0].includes('/') ? p.imagenes[0] : `img/${p.imagenes[0]}`;
+          } else if (p.imagen) {
+            rutaImagen = p.imagen.includes('/') ? p.imagen : `img/${p.imagen}`;
+          }
+
+          const mensajeWa = encodeURIComponent(`Hola! Me interesa la propiedad ${p.id} - ${p.titulo} (${p.precioTexto}). Quisiera más información.`);
+          const urlWa = `https://wa.me/5492665105831?text=${mensajeWa}`;
+
+          tarjeta.innerHTML = `
+            <a href="detalle.html?id=${p.id}" class="tarjeta-propiedad__enlace">
+              <div class="tarjeta-propiedad__imagen" style="background-image: url('${rutaImagen}');">
+                <span class="tarjeta-propiedad__etiqueta">${p.operacion}</span>
+                <button type="button" class="btn-quitar-fav" data-id="${p.id}" title="Quitar de favoritos" style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.6); color: #fff; border: none; border-radius: 50%; width: 32px; height: 32px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1rem;">✕</button>
+              </div>
+              <div class="tarjeta-propiedad__cuerpo">
+                <span style="font-family: var(--font-data); font-size: 0.75rem; color: var(--oxido); font-weight: bold; text-transform: uppercase; display: block; margin-bottom: 0.2rem;">
+                  Ref: ${p.id}
+                </span>
+                <p class="tarjeta-propiedad__zona">${p.zona}</p>
+                <h3 class="tarjeta-propiedad__titulo">${p.titulo}</h3>
+                <p class="tarjeta-propiedad__precio">${p.precioTexto}</p>
+                
+                <div class="tarjeta-propiedad__pie">
+                  <div class="tarjeta-propiedad__specs">
+                    <span class="tarjeta-spec-chip">${p.ambientes}</span>
+                    <span class="tarjeta-spec-chip">${p.superficie}</span>
+                  </div>
+                  <button type="button" class="tarjeta-btn-wa" onclick="event.preventDefault(); event.stopPropagation(); window.open('${urlWa}', '_blank');">Consultar</button>
+                </div>
+              </div>
+            </a>
+          `;
+
+          // Botón para quitar de favoritos desde la misma grilla
+          tarjeta.querySelector('.btn-quitar-fav').addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            let lista = obtenerFavoritos();
+            lista = lista.filter(id => id !== p.id);
+            localStorage.setItem('tercerAireFavoritos', JSON.stringify(lista));
+            renderizarFavoritos();
+          });
+
+          grilla.appendChild(tarjeta);
+        });
+
+        // Configurar botón de WhatsApp grupal
+        if (btnConsultarTodas) {
+          btnConsultarTodas.onclick = () => {
+            const listaTextos = propiedadesFavs.map(p => `- Ref ${p.id}: ${p.titulo} (${p.precioTexto})`).join('\n');
+            const mensajeGrupal = encodeURIComponent(`Hola! Estuve viendo su web y me interesaron estas propiedades:\n${listaTextos}\nQuisiera coordinar una visita o recibir más información.`);
+            window.open(`https://wa.me/5492665105831?text=${mensajeGrupal}`, '_blank');
+          };
+        }
+      }
+
+      renderizarFavoritos();
+    });
+  </script>
+</body>
+</html>
