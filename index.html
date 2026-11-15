@@ -64,7 +64,6 @@
           <h2 class="seccion__titulo">Propiedades destacadas</h2>
         </div>
         
-        <!-- Grilla de destacadas -->
         <div class="catalogo__grid" id="grillaDestacadas"></div>
 
         <div style="text-align: center; margin-top: 2.5rem;">
@@ -182,6 +181,9 @@
       const grilla = document.getElementById('grillaDestacadas');
       if (!grilla || typeof listaPropiedades === 'undefined') return;
 
+      const svgCorazonVacio = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>`;
+      const svgCorazonLleno = `<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>`;
+
       function obtenerFavoritos() {
         return JSON.parse(localStorage.getItem('tercerAireFavoritos')) || [];
       }
@@ -226,8 +228,8 @@
                       class="btn-favorito ${esFav ? 'activo' : ''}" 
                       data-id="${p.id}" 
                       title="${esFav ? 'Quitar de favoritos' : 'Guardar en favoritos'}" 
-                      style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.65); color: ${esFav ? '#e74c3c' : '#ffffff'}; border: none; border-radius: 50%; width: 34px; height: 34px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; z-index: 2; transition: transform 0.2s ease, color 0.2s ease;">
-                ${esFav ? '♥' : '♡'}
+                      style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.65); color: ${esFav ? '#e74c3c' : '#ffffff'}; border: none; border-radius: 50%; width: 34px; height: 34px; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 2; transition: transform 0.2s ease, color 0.2s ease;">
+                ${esFav ? svgCorazonLleno : svgCorazonVacio}
               </button>
             </div>
             <div class="tarjeta-propiedad__cuerpo">
@@ -270,12 +272,12 @@
           let favs = obtenerFavoritos();
           if (favs.includes(p.id)) {
             favs = favs.filter(id => id !== p.id);
-            btnFav.textContent = '♡';
+            btnFav.innerHTML = svgCorazonVacio;
             btnFav.style.color = '#ffffff';
             btnFav.title = 'Guardar en favoritos';
           } else {
             favs.push(p.id);
-            btnFav.textContent = '♥';
+            btnFav.innerHTML = svgCorazonLleno;
             btnFav.style.color = '#e74c3c';
             btnFav.title = 'Quitar de favoritos';
           }
@@ -291,12 +293,14 @@
     });
   </script>
 
-  <!-- CONTENEDOR FLOTANTE UNIFICADO -->
+  <!-- CONTENEDOR FLOTANTE UNIFICADO CON SVG EN FAVORITOS -->
   <div style="position: fixed; bottom: 20px; right: 20px; display: flex; align-items: center; gap: 12px; z-index: 9999;">
     
-    <!-- BOTÓN DE FAVORITOS (ÓXIDO CON CORAZÓN BLANCO) -->
-    <a href="favoritos.html" id="btnFlotanteFav" aria-label="Ver mis propiedades favoritas" style="position: relative; background-color: var(--oxido, #c0392b); color: #ffffff; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.25); font-size: 1.4rem; text-decoration: none; flex-shrink: 0;">
-      ♥
+    <!-- BOTÓN DE FAVORITOS (ÓXIDO CON CORAZÓN SVG) -->
+    <a href="favoritos.html" id="btnFlotanteFav" aria-label="Ver mis propiedades favoritas" style="position: relative; background-color: var(--oxido, #c0392b); color: #ffffff; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.25); text-decoration: none; flex-shrink: 0;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+      </svg>
       <span id="badgeFavCount" style="position: absolute; top: -4px; right: -4px; background-color: #ffffff; color: var(--oxido, #c0392b); font-size: 0.75rem; font-weight: bold; width: 20px; height: 20px; border-radius: 50%; display: none; align-items: center; justify-content: center; border: 2px solid var(--oxido, #c0392b);">0</span>
     </a>
 

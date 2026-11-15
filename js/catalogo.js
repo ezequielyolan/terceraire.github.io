@@ -18,17 +18,35 @@ document.addEventListener('DOMContentLoaded', () => {
   let paginaActual = 1;
   let resultadosActuales = [];
 
-  // Función para obtener la lista actual de favoritos
+  // Íconos SVG vectoriales para favoritos
+  const svgCorazonVacio = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>`;
+  const svgCorazonLleno = `<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>`;
+
   function obtenerFavoritos() {
     return JSON.parse(localStorage.getItem('tercerAireFavoritos')) || [];
   }
 
-  // Actualiza el contador del nav si el enlace existe
-  function actualizarContadorNav() {
-    const linkFavs = document.getElementById('linkFavoritos');
-    if (linkFavs) {
-      const favs = obtenerFavoritos();
-      linkFavs.textContent = `Favoritos (${favs.length})`;
+  function actualizarContadoresGlobales() {
+    const favs = obtenerFavoritos();
+    const badge = document.getElementById('badgeFavCount');
+    if (badge) {
+      if (favs.length > 0) {
+        badge.textContent = favs.length;
+        badge.style.display = 'flex';
+      } else {
+        badge.style.display = 'none';
+      }
+    }
+
+    const banner = document.getElementById('bannerFavoritosCatalogo');
+    const numBanner = document.getElementById('numFavsBanner');
+    if (banner && numBanner) {
+      if (favs.length > 0) {
+        numBanner.textContent = favs.length;
+        banner.style.display = 'flex';
+      } else {
+        banner.style.display = 'none';
+      }
     }
   }
 
@@ -50,11 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (resultadoVacio) resultadoVacio.style.display = 'none';
 
-    // Calcular qué propiedades mostrar según la página actual
     const inicio = (paginaActual - 1) * propiedadesPorPagina;
     const fin = inicio + propiedadesPorPagina;
     const propiedadesPagina = resultadosActuales.slice(inicio, fin);
-
     const favsActuales = obtenerFavoritos();
 
     propiedadesPagina.forEach(p => {
@@ -70,20 +86,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const mensajeWa = encodeURIComponent(`Hola! Me interesa la propiedad ${p.id} - ${p.titulo} (${p.precioTexto}). Quisiera más información.`);
       const urlWa = `https://wa.me/5492665105831?text=${mensajeWa}`;
-
       const esFav = favsActuales.includes(p.id);
 
       tarjeta.innerHTML = `
         <a href="detalle.html?id=${p.id}" class="tarjeta-propiedad__enlace">
           <div class="tarjeta-propiedad__imagen" style="background-image: url('${rutaImagen}'); position: relative;">
             <span class="tarjeta-propiedad__etiqueta">${p.operacion}</span>
-            <!-- BOTÓN DE FAVORITOS (CORAZÓN) -->
             <button type="button" 
                     class="btn-favorito ${esFav ? 'activo' : ''}" 
                     data-id="${p.id}" 
                     title="${esFav ? 'Quitar de favoritos' : 'Guardar en favoritos'}" 
-                    style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.65); color: ${esFav ? '#e74c3c' : '#ffffff'}; border: none; border-radius: 50%; width: 34px; height: 34px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; z-index: 2; transition: transform 0.2s ease, color 0.2s ease;">
-              ${esFav ? '♥' : '♡'}
+                    style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.65); color: ${esFav ? '#e74c3c' : '#ffffff'}; border: none; border-radius: 50%; width: 34px; height: 34px; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 2; transition: transform 0.2s ease, color 0.2s ease;">
+              ${esFav ? svgCorazonLleno : svgCorazonVacio}
             </button>
           </div>
           <div class="tarjeta-propiedad__cuerpo">
@@ -118,7 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
         </a>
       `;
 
-      // Evento del botón Favorito dentro de la tarjeta
       const btnFav = tarjeta.querySelector('.btn-favorito');
       btnFav.addEventListener('click', (e) => {
         e.preventDefault();
@@ -127,18 +140,18 @@ document.addEventListener('DOMContentLoaded', () => {
         let favs = obtenerFavoritos();
         if (favs.includes(p.id)) {
           favs = favs.filter(id => id !== p.id);
-          btnFav.textContent = '♡';
+          btnFav.innerHTML = svgCorazonVacio;
           btnFav.style.color = '#ffffff';
           btnFav.title = 'Guardar en favoritos';
         } else {
           favs.push(p.id);
-          btnFav.textContent = '♥';
+          btnFav.innerHTML = svgCorazonLleno;
           btnFav.style.color = '#e74c3c';
           btnFav.title = 'Quitar de favoritos';
         }
 
         localStorage.setItem('tercerAireFavoritos', JSON.stringify(favs));
-        actualizarContadorNav();
+        actualizarContadoresGlobales();
       });
 
       grilla.appendChild(tarjeta);
@@ -236,40 +249,9 @@ document.addEventListener('DOMContentLoaded', () => {
     btnBuscar.addEventListener('click', ejecutarBusqueda);
   }
 
-  // Carga inicial y contador del menú
-  actualizarContadorNav();
+  actualizarContadoresGlobales();
   if (typeof listaPropiedades !== 'undefined') {
     resultadosActuales = listaPropiedades;
     renderizarPropiedades();
   }
-  // Sincronizar contadores de favoritos en toda la página
-  function actualizarContadoresGlobales() {
-    const favs = JSON.parse(localStorage.getItem('tercerAireFavoritos')) || [];
-    
-    // Actualizar badge del botón flotante
-    const badge = document.getElementById('badgeFavCount');
-    if (badge) {
-      if (favs.length > 0) {
-        badge.textContent = favs.length;
-        badge.style.display = 'flex';
-      } else {
-        badge.style.display = 'none';
-      }
-    }
-
-    // Actualizar banner en la página de propiedades (si existe)
-    const banner = document.getElementById('bannerFavoritosCatalogo');
-    const numBanner = document.getElementById('numFavsBanner');
-    if (banner && numBanner) {
-      if (favs.length > 0) {
-        numBanner.textContent = favs.length;
-        banner.style.display = 'flex';
-      } else {
-        banner.style.display = 'none';
-      }
-    }
-  }
-
-  // Ejecutar al cargar la página
-  actualizarContadoresGlobales();
 });
