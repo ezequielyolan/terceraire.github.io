@@ -32,20 +32,30 @@
       overflow-x: hidden;
     }
 
-    /* Marca de agua / Ilustración geométrica de fondo (esquina inferior derecha) */
+/* Marca de agua / Ilustración geométrica de fondo adaptada para celulares */
     body::after {
       content: "";
       position: fixed;
-      bottom: -30px;
-      right: -30px;
-      width: 320px;
-      height: 380px;
-      /* Silueta vectorial discreta simulando la estructura del fondo */
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 240' fill='none' stroke='%23888888' stroke-width='3' stroke-opacity='0.25'%3E%3Cpolygon points='100,10 190,70 190,230 10,230 10,70' /%3E%3Cline x1='100' y1='10' x2='100' y2='230' /%3E%3Cline x1='10' y1='110' x2='190' y2='110' /%3E%3Cline x1='10' y1='170' x2='190' y2='170' /%3E%3C/svg%3E");
+      bottom: -20px;
+      right: -20px;
+      width: 200px;  /* Reducido para que no moleste en mobile */
+      height: 240px; /* Reducido proporcionalmente */
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 240' fill='none' stroke='%23888888' stroke-width='3' stroke-opacity='0.2'%3E%3Cpolygon points='100,10 190,70 190,230 10,230 10,70' /%3E%3Cline x1='100' y1='10' x2='100' y2='230' /%3E%3Cline x1='10' y1='110' x2='190' y2='110' /%3E%3Cline x1='10' y1='170' x2='190' y2='170' /%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-size: contain;
       pointer-events: none;
       z-index: 1;
+    }
+
+    /* Opcional: Si querés que en pantallas muy chicas de celular se achique aún más o pase desapercibido */
+    @media (max-width: 480px) {
+      body::after {
+        width: 140px;
+        height: 170px;
+        bottom: -10px;
+        right: -10px;
+        opacity: 0.7;
+      }
     }
 
     .linktree-contenedor {
