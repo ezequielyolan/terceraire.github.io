@@ -8,6 +8,25 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/componentes.css">
   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  
+  <style>
+    /* SOLUCIÓN DIRECTA PARA EL DESPLIEGUE DE FILTROS EN MÓVIL */
+    @media (max-width: 768px) {
+      .filtros-avanzados {
+        display: none !important;
+      }
+      .filtros-avanzados.activo {
+        display: block !important;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        animation: fadeInFiltros 0.3s ease;
+      }
+    }
+    @keyframes fadeInFiltros {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
 
@@ -140,17 +159,18 @@
                 <option value="3">3 o más</option>
               </select>
             </div>
-            <!-- NUEVO: FILTROS DE COMODIDADES -->
-        <div class="grupo-filtro grupo-filtro--checkboxes">
-          <label class="filtro-label">Otros Filtros</label>
-          <div class="checkboxes-grid">
-            <label class="check-item"><input type="checkbox" name="comodidad" value="cochera"> Cochera</label>
-            <label class="check-item"><input type="checkbox" name="comodidad" value="pileta"> Pileta</label>
-            <label class="check-item"><input type="checkbox" name="comodidad" value="parrilla"> Parrilla</label>
-            <label class="check-item"><input type="checkbox" name="comodidad" value="patio"> Patio</label>
-            <label class="check-item"><input type="checkbox" name="comodidad" value="mascotas"> Acepta mascotas</label>
-          </div>
-        </div>
+            
+            <!-- FILTROS DE COMODIDADES -->
+            <div class="grupo-filtro grupo-filtro--checkboxes">
+              <label class="filtro-label">Otros Filtros</label>
+              <div class="checkboxes-grid">
+                <label class="check-item"><input type="checkbox" name="comodidad" value="cochera"> Cochera</label>
+                <label class="check-item"><input type="checkbox" name="comodidad" value="pileta"> Pileta</label>
+                <label class="check-item"><input type="checkbox" name="comodidad" value="parrilla"> Parrilla</label>
+                <label class="check-item"><input type="checkbox" name="comodidad" value="patio"> Patio</label>
+                <label class="check-item"><input type="checkbox" name="comodidad" value="mascotas"> Acepta mascotas</label>
+              </div>
+            </div>
 
           </div>
 
@@ -163,15 +183,18 @@
             </button>
           </div>
         </div>
+
         <!-- CONTENEDOR DE PAGINACIÓN SUPERIOR -->
         <div id="paginacionSuperior" style="display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 2rem;"></div>
+        
         <!-- BANNER DINÁMICO DE FAVORITOS EN EL CATÁLOGO -->
-  <div id="bannerFavoritosCatalogo" style="display: none; background-color: var(--hueso, #f4f1ea); border: 1px solid var(--borde-suave, #ddd); padding: 1rem 1.5rem; margin-bottom: 2rem; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-    <p style="margin: 0; color: var(--pizarra, #333); font-weight: 500;">
-      Tienes <span id="numFavsBanner" style="font-weight: bold; color: var(--oxido);">0</span> propiedades guardadas en tu lista de favoritas.
-    </p>
-    <a href="favoritos.html" class="boton boton--primario" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Ver mis favoritas</a>
-  </div>
+        <div id="bannerFavoritosCatalogo" style="display: none; background-color: var(--hueso, #f4f1ea); border: 1px solid var(--borde-suave, #ddd); padding: 1rem 1.5rem; margin-bottom: 2rem; border-radius: 6px; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <p style="margin: 0; color: var(--pizarra, #333); font-weight: 500;">
+            Tienes <span id="numFavsBanner" style="font-weight: bold; color: var(--oxido);">0</span> propiedades guardadas en tu lista de favoritas.
+          </p>
+          <a href="favoritos.html" class="boton boton--primario" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Ver mis favoritas</a>
+        </div>
+
         <!-- GRILLA DE PROPIEDADES -->
         <div class="catalogo__contenido">
           <div class="catalogo__grid" id="grillaPropiedades">
@@ -181,7 +204,7 @@
         </div>
 
         <!-- CONTENEDOR DE PAGINACIÓN -->
-          <div id="paginacionContenedor" style="display: flex; justify-content: center; gap: 0.5rem; margin-top: 2.5rem;"></div>
+        <div id="paginacionContenedor" style="display: flex; justify-content: center; gap: 0.5rem; margin-top: 2.5rem;"></div>
 
       </div>
     </section>
@@ -280,14 +303,13 @@
     </div>
   </footer>
 
-  <!-- Importante: Primero la base de datos de propiedades y luego la lógica del catálogo -->
   <script src="js/propiedades.js"></script>
   <script src="js/catalogo.js"></script>
 
   <!-- CONTENEDOR FLOTANTE UNIFICADO -->
   <div style="position: fixed; bottom: 20px; right: 20px; display: flex; align-items: center; gap: 12px; z-index: 9999;">
     
-    <!-- BOTÓN DE FAVORITOS (ÓXIDO CON CORAZÓN SVG) -->
+    <!-- BOTÓN DE FAVORITOS -->
     <a href="favoritos.html" id="btnFlotanteFav" aria-label="Ver mis propiedades favoritas" style="position: relative; background-color: var(--oxido, #c0392b); color: #ffffff; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.25); text-decoration: none; flex-shrink: 0;">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" stroke="none">
         <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
