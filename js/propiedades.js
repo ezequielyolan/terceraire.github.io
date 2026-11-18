@@ -541,7 +541,7 @@ Un entorno ideal para disfrutar en pareja, en familia o con amigos.⁣
 ⁣
 🏡 Cabañas totalmente equipadas para 2, 4 y 7 personas.⁣
 ⁣
-Servicios y comodidades:⁣
+- Servicios y comodidades:⁣
 ✔️ Cochera cubierta.⁣
 ✔️ Asador exclusivo.⁣
 ✔️ Piscina.⁣
