@@ -643,11 +643,17 @@
     display: none;
   }
 
-  /* Se muestra cuando el usuario toca el botón */
-  .filtros-avanzados.abierto {
-    display: block;
+  /* Se muestra cuando el usuario toca el botón en celular */
+  .filtros-avanzados.activo {
+    display: block !important;
     margin-bottom: var(--espacio-l);
+    animation: fadeInFiltros 0.3s ease;
   }
+}
+
+@keyframes fadeInFiltros {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* ---------- Página de detalle de propiedad ---------- */
