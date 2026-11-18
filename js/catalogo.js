@@ -13,6 +13,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const filtroBanos = document.getElementById('filtroBanos');
   const filtroDormitorios = document.getElementById('filtroDormitorios');
 
+  // ==========================================
+  // LÓGICA DE APERTURA DE FILTROS EN CELULARES
+  // ==========================================
+  const btnToggleFiltros = document.getElementById('btnToggleFiltros');
+  const panelFiltros = document.getElementById('panelFiltros');
+
+  if (btnToggleFiltros && panelFiltros) {
+    btnToggleFiltros.addEventListener('click', () => {
+      const estaAbierto = panelFiltros.classList.toggle('activo');
+      btnToggleFiltros.setAttribute('aria-expanded', estaAbierto);
+      
+      const textoToggle = document.getElementById('textoToggleFiltros');
+      if (textoToggle) {
+        textoToggle.textContent = estaAbierto ? 'Ocultar filtros' : 'Filtrar propiedades';
+      }
+    });
+  }
+
   // Configuración de paginación
   const propiedadesPorPagina = 12;
   let paginaActual = 1;
