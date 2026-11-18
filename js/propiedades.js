@@ -122,19 +122,7 @@ Consultanos para conocer más detalles y coordinar una visita.⁣`
       "props/CH/CH-001/ch00103.jpeg",
       "props/CH/CH-001/ch00104.jpeg",
       "props/CH/CH-001/ch00105.jpeg",
-      "props/CH/CH-001/ch00106.jpeg",
-      "props/CH/CH-001/ch00107.jpeg",
-      "props/CH/CH-001/ch00108.jpeg",
-      "props/CH/CH-001/ch00109.jpeg",
-      "props/CH/CH-001/ch00110.jpeg",
-      "props/CH/CH-001/ch00111.jpeg",
-      "props/CH/CH-001/ch00112.jpeg",
-      "props/CH/CH-001/ch00113.jpeg",
-      "props/CH/CH-001/ch00114.jpeg",
-      "props/CH/CH-001/ch00115.jpeg",
-      "props/CH/CH-001/ch00116.jpeg",
-      "props/CH/CH-001/ch00117.jpeg",
-      "props/CH/CH-001/ch00118.jpeg"
+      "props/CH/CH-001/ch00106.jpeg"
     ],
     descripcion: `🏡 𝗨𝗻𝗮 𝗽𝗿𝗼𝗽𝗶𝗲𝗱𝗮𝗱 𝗰𝗼𝗻 𝗺𝘂́𝗹𝘁𝗶𝗽𝗹𝗲𝘀 𝗽𝗼𝘀𝗶𝗯𝗶𝗹𝗶𝗱𝗮𝗱𝗲𝘀 𝗲𝗻 𝗝𝘂𝗮𝗻𝗮 𝗞𝗼𝘀𝗹𝗮𝘆 - 𝗦𝗮𝗻 𝗟𝘂𝗶𝘀⁣
 ⁣
@@ -176,13 +164,7 @@ Una excelente oportunidad para conocer y evaluar de acuerdo con tus planes y obj
       "props/CS/CS-002/cs00203.jpeg",
       "props/CS/CS-002/cs00204.jpeg",
       "props/CS/CS-002/cs00205.jpeg",
-      "props/CS/CS-002/cs00206.jpeg",
-      "props/CS/CS-002/cs00207.jpeg",
-      "props/CS/CS-002/cs00208.jpeg",
-      "props/CS/CS-002/cs00209.jpeg",
-      "props/CS/CS-002/cs00210.jpeg",
-      "props/CS/CS-002/cs00211.jpeg",
-      "props/CS/CS-002/cs00212.jpeg"
+      "props/CS/CS-002/cs00206.jpeg"
     ],
     descripcion: `VENTA | CASA A ESTRENAR EN CORTADERAS, SAN LUIS
 ⁣
@@ -300,13 +282,7 @@ Opción de financiación: Anticipo de USD 30.000 + 30 cuotas de USD 1.000.`
       "props/CS/CS-004/cs00402.jpg",
       "props/CS/CS-004/cs00403.jpg",
       "props/CS/CS-004/cs00404.jpg",
-      "props/CS/CS-004/cs00405.jpg",
-      "props/CS/CS-004/cs00406.jpg",
-      "props/CS/CS-004/cs00407.jpg",
-      "props/CS/CS-004/cs00408.jpg",
-      "props/CS/CS-004/cs00409.jpg",
-      "props/CS/CS-004/cs00410.jpg",
-      "props/CS/CS-004/cs00411.jpg" 
+      "props/CS/CS-004/cs00405.jpg"
     ],
     descripcion: `Una propiedad para quienes buscan tranquilidad, espacio y la comodidad de contar con una casa amoblada.⁣
 ⁣
@@ -349,13 +325,7 @@ Una oportunidad para disfrutar de Cortaderas y su entorno natural.⁣
       "props/DP/DP-001/dp00102.jpg",
       "props/DP/DP-001/dp00103.jpg",
       "props/DP/DP-001/dp00104.jpg",
-      "props/DP/DP-001/dp00105.jpg",
-      "props/DP/DP-001/dp00106.jpg",
-      "props/DP/DP-001/dp00107.jpg",
-      "props/DP/DP-001/dp00108.jpg",
-      "props/DP/DP-001/dp00109.jpg",
-      "props/DP/DP-001/dp00110.jpg",
-      "props/DP/DP-001/dp00111.jpg"
+      "props/DP/DP-001/dp00105.jpg"
     ],
     descripcion: `Si buscás un espacio propio, funcional y cerca de todo, esta puede ser una buena opción.⁣
 ⁣
@@ -525,9 +495,7 @@ Posibilidad de financiación con una entrega del 50%.⁣
       "props/CS/CS-006/cs00604.jpg",
       "props/CS/CS-006/cs00605.jpg",
       "props/CS/CS-006/cs00606.jpg",
-      "props/CS/CS-006/cs00607.jpg",
-      "props/CS/CS-006/cs00608.jpg",
-      "props/CS/CS-006/cs00609.jpg"
+      "props/CS/CS-006/cs00607.jpg"
     ],
     descripcion: `Vivienda de 65 m2 en terreno de 330 m2⁣
 ⁣
@@ -549,5 +517,42 @@ Requisitos para ingresar: ⁣
 ⁣
 ✉️Escribinos para agendar una visita.⁣⁣`
   },
-
+{
+    id: "CB-001",
+    titulo: "CABAÑAS EN ALQUILER TURÍSTICO. CORTADERAS - SAN LUIS",
+    tipo: "cabaña",
+    operacion: "alquiler",
+    zona: "Cortaderas",
+    moneda: "ARS",
+    valorNum: null,
+    precioTexto: "A consultar",
+    extras: ["patio", "mascotas", "pileta", "parrilla", "cochera"],
+    mapaHtml: '<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d876.0863207724574!2d-64.97894107149057!3d-32.52156699835388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzLCsDMxJzE3LjYiUyA2NMKwNTgnNDEuOSJX!5e1!3m2!1ses!2sar!4v1795019545263!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>',
+    imagenes: [
+      "props/CB/CB-001/cb00101.jpg",
+      "props/CB/CB-001/cb00102.jpg",
+      "props/CB/CB-001/cb00103.jpg",
+      "props/CB/CB-001/cb00104.jpg",
+      "props/CB/CB-001/cb00105.jpg"
+    ],
+    descripcion: `En Cortaderas, del lado de las sierras, encontrás estas cabañas rodeadas de naturaleza, en un predio de más de una hectárea atravesado por el arroyo Benítez.⁣
+⁣
+Un entorno ideal para disfrutar en pareja, en familia o con amigos.⁣
+⁣
+🏡 Cabañas totalmente equipadas para 2, 4 y 7 personas.⁣
+⁣
+Servicios y comodidades:⁣
+✔️ Cochera cubierta.⁣
+✔️ Asador exclusivo.⁣
+✔️ Piscina.⁣
+✔️ TV satelital y WiFi.⁣
+✔️ Senderos internos para recorrer el predio y acceder al arroyo.⁣
+✔️ Bajada al arroyo Benítez.⁣
+⁣
+🌄 Disfrutá de las vistas a las sierras, el contacto con la naturaleza y la tranquilidad de un entorno único.⁣
+⁣
+Tu próxima escapada puede empezar acá.⁣
+⁣
+📲 Consultanos por disponibilidad y tarifas.⁣⁣`
+  },
 ];
